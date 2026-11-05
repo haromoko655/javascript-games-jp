@@ -1,5 +1,5 @@
 <template>
-  <div class="repository-links">
+  <div class="repository-links" @pointerleave="menuOpen = false">
     <button
       type="button"
       class="repository-trigger"
