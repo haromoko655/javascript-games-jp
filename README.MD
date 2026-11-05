@@ -1,6 +1,6 @@
 # Brain Busters — 日本語版
 
-[English README](README.en.md)
+[English README](README.en.md)<br>
 この日本語版は [muthuspark/javascript-games](https://github.com/muthuspark/javascript-games) を元にしています。
 ブラウザーで遊べるパズル・脳トレゲーム集の日本語版です。Vue 3 と Vite で構築され、数独、マインスイーパー、五目並べなど27種類のゲームを収録しています。
 [こちらからプレイ](https://haromoko655.github.io/javascript-games-jp)
