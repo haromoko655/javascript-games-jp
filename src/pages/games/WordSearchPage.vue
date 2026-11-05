@@ -12,31 +12,31 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="game-container word-search-game">
         <div class="puzzle-toolbar">
-          <p id="wordSearchProgress" class="mb-0">Loading puzzle…</p>
-          <button id="newPuzzle" type="button">New puzzle</button>
+          <p id="wordSearchProgress" class="mb-0">問題を読み込んでいます…</p>
+          <button id="newPuzzle" type="button">新しい問題</button>
         </div>
         <p id="wordSearchInstructions" class="game-instructions">
-          Select the first and last letter of a word, or drag with a mouse.
-          With a keyboard, use arrow keys to move, Enter or Space to select each end, and Escape to cancel.
+          Select the first and last letter of a word,またはdrag with a mouse.
+          With a keyboard, use arrow keysで移動します, EnterまたはSpace to select each end, and Escape to cancel.
           Scroll within larger boards to see every letter.
         </p>
-        <div class="board-scroll" role="region" aria-label="Scrollable word-search board">
-          <div id="grid" class="grid" role="grid" aria-label="Word-search letters" aria-describedby="wordSearchInstructions"></div>
+        <div class="board-scroll" role="region" aria-label="スクロール可能なワードサーチ盤面">
+          <div id="grid" class="grid" role="grid" aria-label="ワードサーチの文字盤" aria-describedby="wordSearchInstructions"></div>
         </div>
         <p id="wordSearchStatus" class="puzzle-status" role="status" aria-live="polite" aria-atomic="true"></p>
         <section aria-labelledby="wordsHeading" class="puzzle-options">
-          <h2 id="wordsHeading">Words to find</h2>
+          <h2 id="wordsHeading">探す単語</h2>
           <ul id="wordList" class="word-list"></ul>
         </section>
         <div class="puzzle-options">
-          <h2 id="sizeHeading">Grid size</h2>
+          <h2 id="sizeHeading">盤面サイズ</h2>
           <div id="gridSize" class="option-buttons" role="group" aria-labelledby="sizeHeading"></div>
         </div>
         <div class="puzzle-options">
-          <h2 id="categoryHeading">Category</h2>
+          <h2 id="categoryHeading">カテゴリ</h2>
           <div id="categoryButtons" class="option-buttons" role="group" aria-labelledby="categoryHeading"></div>
         </div>
       </div>
@@ -45,8 +45,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -65,29 +65,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'word-search',
-  title: 'Word Search Puzzle - Find Hidden Words',
-  shortTitle: 'Word Search',
-  description: 'Find hidden words in a grid of letters. Words can be horizontal, vertical, diagonal, or backwards. Multiple categories and grid sizes.',
+  title: 'ワードサーチ - 隠れた言葉を探そう',
+  shortTitle: 'ワードサーチ',
+  description: '文字の中から隠れた単語を探しましょう。単語は縦・横・斜め・逆向きに並びます。カテゴリや盤面サイズを選べます。',
   metaDescription: 'Play free word search puzzles online. Find hidden words in letter grids with multiple categories. Great for vocabulary and brain training.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Word Games', 'Educational'],
+  categories: ['パズル', '言葉', '学習'],
   keywords: ['word search', 'word find', 'word puzzle', 'hidden words', 'word search puzzle'],
   initCode: 'const game = new WordSearchGame(); game.newGame(); return () => game.destroy();',
   faqs: [
     {
-      question: 'How do you play Word Search?',
-      answer: 'Find words from the list hidden in the letter grid. Words can go horizontally, vertically, diagonally, and even backwards. Select the first and last letter, or drag with a mouse. Use arrow keys and Enter to play with a keyboard.'
+      question: "ワードサーチはどう遊びますか？",
+      answer: "一覧にある単語を文字の盤面から探します。単語は横・縦・斜め、または逆向きに隠れています。最初と最後の文字を選ぶか、マウスでドラッグしてください。キーボードでは矢印キーとEnterキーが使えます。"
     },
     {
-      question: 'Are word searches good for your brain?',
-      answer: 'Yes! Word searches improve vocabulary, pattern recognition, and concentration. They are great for all ages.'
+      question: "ワードサーチは脳トレになりますか？",
+      answer: "語彙、パターン認識、集中力を使います。幅広い年齢の方が楽しめるパズルです。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

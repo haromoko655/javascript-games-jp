@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+  <nav class="navbar navbar-expand-lg" aria-label="メインナビゲーション">
     <div class="container">
-      <router-link class="navbar-brand d-flex align-items-center" to="/" aria-label="Brain Busters - Home">
-        <span class="brand-text">Brain Busters</span>
+      <router-link class="navbar-brand d-flex align-items-center" to="/" aria-label="ブレインバスターズ - ホーム">
+        <span class="brand-text">ブレインバスターズ 日本語版</span>
       </router-link>
       <button
         class="navbar-toggler"
@@ -11,45 +11,19 @@
         data-bs-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
-        aria-label="Toggle navigation menu"
+        aria-label="ナビゲーションメニューを開閉"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item">
-            <router-link class="nav-link" to="/" aria-label="Browse all games">
-              <i class="bi bi-controller me-1" aria-hidden="true"></i> Games
+            <router-link class="nav-link" to="/" aria-label="すべてのゲームを見る">
+              <i class="bi bi-controller me-1" aria-hidden="true"></i> ゲーム一覧
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/about" aria-label="About the creator">
-              <i class="bi bi-person me-1" aria-hidden="true"></i> About
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://github.com/muthuspark/javascript-games"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View source code on GitHub"
-            >
-              <i class="bi bi-github" aria-hidden="true"></i>
-              <span class="d-lg-none ms-1">GitHub</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://twitter.com/krimuthu"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow on Twitter"
-            >
-              <i class="bi bi-twitter" aria-hidden="true"></i>
-              <span class="d-lg-none ms-1">Twitter</span>
-            </a>
+            <RepositoryLinks menu-id="header-repository-menu" />
           </li>
         </ul>
       </div>
@@ -58,6 +32,7 @@
 </template>
 
 <script setup>
+import RepositoryLinks from './RepositoryLinks.vue'
 </script>
 
 <style scoped>

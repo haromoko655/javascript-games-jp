@@ -12,16 +12,16 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="controls">
-        <button class="easy" onclick="setDifficulty(3)">Easy (3x3)</button>
-        <button class="medium" onclick="setDifficulty(4)">Medium (4x4)</button>
-        <button class="hard" onclick="setDifficulty(5)">Hard (5x5)</button>
-        <button class="new-game" onclick="initGame()">New Game</button>
-        <button class="hint" onclick="giveHint()">Hint</button>
-        <button class="solve" onclick="solve()">Solve</button>
+        <button class="easy" onclick="setDifficulty(3)">初級（3×3）</button>
+        <button class="medium" onclick="setDifficulty(4)">中級（4×4）</button>
+        <button class="hard" onclick="setDifficulty(5)">上級（5×5）</button>
+        <button class="new-game" onclick="initGame()">新しいゲーム</button>
+        <button class="hint" onclick="giveHint()">ヒント</button>
+        <button class="solve" onclick="solve()">解く</button>
       </div>
-      <h3>Magic Sum: <span id="magic-sum">0</span></h3>
+      <h3>魔方陣の合計：<span id="magic-sum">0</span></h3>
       <div id="status" class="status"></div>
 
       <div class="align-center">
@@ -32,8 +32,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -52,29 +52,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'magicsquare',
-  title: 'Magic Square Puzzle - Math Brain Game',
-  shortTitle: 'Magic Square',
-  description: 'Arrange numbers in a grid so rows, columns, and diagonals all sum to the same magic number. Great for math practice.',
-  metaDescription: 'Play Magic Square puzzles online. Arrange numbers so all rows, columns, and diagonals have the same sum. Fun math brain training game.',
+  title: '魔方陣 - 数字パズル',
+  shortTitle: '魔方陣',
+  description: '縦・横・対角線の合計がすべて同じになるように数字を配置しましょう。計算力を試せるパズルです。',
+  metaDescription: 'Play Magic 四角形 puzzles online. Arrange numbers so all rows, columns, and diagonals have the same sum. Fun math brain training game.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Math Games', 'Educational'],
+  categories: ['パズル', '数学', '学習'],
   keywords: ['magic square', 'math puzzle', 'number puzzle', 'magic square solver', 'math game'],
   initCode: 'initGame();',
   faqs: [
     {
-      question: 'What is a Magic Square?',
-      answer: 'A Magic Square is a grid of numbers where every row, column, and diagonal adds up to the same total, called the magic constant.'
+      question: "魔方陣とは何ですか？",
+      answer: "縦・横・対角線の数字の合計がすべて同じになるように並べるパズルです。この共通の合計を「魔法定数」と呼びます。"
     },
     {
-      question: 'How do you calculate the magic constant?',
-      answer: 'For an n×n magic square using numbers 1 to n², the magic constant is n(n²+1)/2. For a 3x3 square, it is 15.'
+      question: "魔法定数はどう計算しますか？",
+      answer: "1からn²までの数字を使うn×nの魔方陣では、魔法定数は n(n²+1)/2 です。3×3の場合は15です。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

@@ -12,23 +12,23 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="maze">
         <div class="game-container">
           <div class="controls">
             <select id="mazeSize">
-              <option value="11">10x10</option>
-              <option value="21">20x20</option>
-              <option value="31">30X30</option>
-              <option value="41">40X40</option>
-              <option value="51">50X50</option>
-              <option value="61">60X60</option>
-              <option value="71">70X70</option>
-              <option value="81">80X80</option>
-              <option value="91">90X90</option>
+              <option value="11">10×10</option>
+              <option value="21">20×20</option>
+              <option value="31">30×30</option>
+              <option value="41">40×40</option>
+              <option value="51">50×50</option>
+              <option value="61">60×60</option>
+              <option value="71">70×70</option>
+              <option value="81">80×80</option>
+              <option value="91">90×90</option>
             </select>
-            <button onclick="generateNewMaze()">Generate Maze</button>
-            <button onclick="resetPlayer()">Reset Player</button>
+            <button onclick="generateNewMaze()">迷路を作り直す</button>
+            <button onclick="resetPlayer()">スタート地点に戻す</button>
           </div>
           <canvas id="mazeCanvas"></canvas>
         </div>
@@ -38,8 +38,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -58,29 +58,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'maze',
-  title: 'Maze Game Online - Navigate Through Puzzles',
-  shortTitle: 'Maze Game',
-  description: 'Navigate through randomly generated mazes using keyboard controls. Choose from 10x10 to 90x90 grid sizes for varying difficulty levels.',
-  metaDescription: 'Play free online maze games with adjustable difficulty. Navigate through randomly generated mazes from 10x10 to 90x90. Use arrow keys or WASD to play.',
+  title: 'オンライン迷路ゲーム',
+  shortTitle: '迷路',
+  description: '自動生成される迷路をキーボードで進みましょう。10×10から90×90まで、サイズを選んで挑戦できます。',
+  metaDescription: 'Play free online maze games with adjustable difficulty. Navigate through randomly generated mazes from 10×10 to 90x90. arrow keysまたはWASD to play.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Navigation Games'],
+  categories: ['パズル', '迷路'],
   keywords: ['maze game', 'online maze', 'puzzle maze', 'labyrinth game', 'maze solver'],
   initCode: 'generateNewMaze();',
   faqs: [
     {
-      question: 'How do you play the maze game?',
-      answer: 'Use arrow keys or WASD to move the red square through the maze. Navigate from the start to the green exit point to win.'
+      question: "迷路ゲームはどう遊びますか？",
+      answer: "矢印キーまたはWASDキーで赤いマスを動かし、スタートから緑の出口を目指します。"
     },
     {
-      question: 'What maze sizes are available?',
-      answer: 'Choose from 10x10 up to 90x90 grid sizes. Larger mazes are more challenging and take longer to solve.'
+      question: "迷路のサイズは選べますか？",
+      answer: "10×10から90×90まで選べます。大きい迷路ほど難しく、解くのに時間がかかります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

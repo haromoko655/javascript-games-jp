@@ -1,6 +1,6 @@
 <template>
   <section class="mt-5 pt-4 border-top" aria-labelledby="related-heading" v-if="relatedGames.length">
-    <h2 id="related-heading" class="section-title mb-4">More Games</h2>
+    <h2 id="related-heading" class="section-title mb-4">関連するゲーム</h2>
     <div class="row row-cols-1 row-cols-md-3 g-3">
       <div v-for="game in relatedGames" :key="game.slug" class="col">
         <router-link
@@ -8,7 +8,7 @@
           class="card h-100 text-decoration-none related-game-card"
         >
           <img
-            :src="`/posts/${game.slug}/${game.thumbnail}`"
+            :src="`${baseUrl}posts/${game.slug}/${game.thumbnail}`"
             alt=""
             class="card-img-top"
             loading="lazy"
@@ -28,6 +28,8 @@
 <script setup>
 import { computed } from 'vue'
 import { games } from '../data/games.js'
+
+const baseUrl = import.meta.env.BASE_URL
 
 const props = defineProps({
   currentSlug: {

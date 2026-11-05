@@ -1,9 +1,9 @@
 <template>
   <article class="card h-100 game-card" itemscope itemtype="https://schema.org/VideoGame">
-    <router-link :to="`/posts/${game.slug}/`" class="card-link" :aria-label="`Play ${game.shortTitle || game.title}`">
+    <router-link :to="`/posts/${game.slug}/`" class="card-link" :aria-label="`${game.shortTitle || game.title}をプレイ`">
       <img
-        :src="`/posts/${game.slug}/${game.thumbnail}`"
-        :alt="`${game.shortTitle || game.title} game preview`"
+        :src="`${baseUrl}posts/${game.slug}/${game.thumbnail}`"
+        :alt="`${game.shortTitle || game.title}のゲーム画面`"
         class="card-img-top"
         :loading="priority ? 'eager' : 'lazy'"
         decoding="async"
@@ -25,7 +25,7 @@
           </span>
         </div>
       </div>
-      <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
+      <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
       <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
         <meta itemprop="price" content="0">
         <meta itemprop="priceCurrency" content="USD">
@@ -36,6 +36,8 @@
 
 <script setup>
 import { computed } from 'vue'
+
+const baseUrl = import.meta.env.BASE_URL
 
 const props = defineProps({
   priority: {

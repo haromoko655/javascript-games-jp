@@ -6,8 +6,8 @@
         <header class="about-header mb-5">
           <div class="profile-section">
             <img
-              src="/profile.png"
-              alt="Muthukrishnan - Creator of Brain Busters"
+              :src="`${baseUrl}profile.png`"
+              alt="Brain Busters の開発者 Muthukrishnan"
               class="profile-img"
               width="120"
               height="120"
@@ -17,22 +17,14 @@
             <div class="profile-info">
               <h1 itemprop="name">Muthukrishnan</h1>
               <p class="tagline" itemprop="description">
-                Software Engineer, Researcher and Author
+                ソフトウェアエンジニア、研究者、著者
               </p>
-              <nav class="social-links" aria-label="Social media links">
-                <a
-                  href="https://twitter.com/krimuthu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow on Twitter"
-                >
-                  <i class="bi bi-twitter" aria-hidden="true"></i>
-                </a>
+              <nav class="social-links" aria-label="関連リンク">
                 <a
                   href="https://linkedin.com/in/krimuthu"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Connect on LinkedIn"
+                  aria-label="LinkedInプロフィールを見る"
                 >
                   <i class="bi bi-linkedin" aria-hidden="true"></i>
                 </a>
@@ -40,7 +32,7 @@
                   href="https://github.com/muthuspark"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="View GitHub profile"
+                  aria-label="GitHubプロフィールを見る"
                 >
                   <i class="bi bi-github" aria-hidden="true"></i>
                 </a>
@@ -51,26 +43,26 @@
 
         <!-- Bio Content -->
         <section class="about-content" aria-labelledby="bio-heading">
-          <h2 id="bio-heading" class="visually-hidden">Biography</h2>
+          <h2 id="bio-heading" class="visually-hidden">プロフィール</h2>
 
           <div itemprop="mainContentOfPage">
-            <p>I'm <strong itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Muthukrishnan</span></strong>, currently working as an Engineering Manager at Sanas AI Inc. I have over 16 years of experience in building scalable SaaS applications from the ground up.</p>
+            <p><strong itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Muthukrishnan</span></strong> は Sanas AI Inc. のエンジニアリングマネージャーです。拡張性の高い SaaS アプリケーションの開発に16年以上携わっています。</p>
 
-            <p>As a hands-on leader, I've built and scaled applications that have grown from hundreds of users to millions, and I have filed about five patents covering technologies from OCR to cross-application walkthroughs.</p>
+            <p>数百人から数百万人が利用するアプリケーションを開発・成長させてきました。OCR やアプリケーション間の操作ガイドなどに関する特許も約5件取得しています。</p>
 
-            <p>In my previous role at Whatfix, I architected and launched the Desktop business, which now generates over $2 million in revenue. I built the team from scratch, guiding them to deliver innovative solutions.</p>
+            <p>以前在籍していた Whatfix では、Desktop 事業の設計と立ち上げを担当しました。チームを一から作り、製品開発を進めました。</p>
 
             <div class="info-block">
-              <h3>Technical Expertise</h3>
-              <p>System design, software architecture, and programming languages including Java, JavaScript, and Python. Committed to process optimization and fostering an agile culture.</p>
+              <h3>技術分野</h3>
+              <p>システム設計、ソフトウェアアーキテクチャ、Java・JavaScript・Python などのプログラミング言語を専門としています。業務プロセスの改善とアジャイルな開発文化にも取り組んでいます。</p>
             </div>
 
             <div class="info-block">
-              <h3>Why Brain Busters?</h3>
-              <p>A passion project combining my love of programming with classic puzzle games. Built with vanilla JavaScript to demonstrate that engaging experiences don't require heavy frameworks.</p>
+              <h3>ブレインバスターズについて</h3>
+              <p>プログラミングと昔ながらのパズルゲームを組み合わせた個人プロジェクトです。大規模なフレームワークを使わず、素の JavaScript でゲームを作っています。</p>
             </div>
 
-            <p class="text-muted">Feel free to reach out via LinkedIn or GitHub for conversations about technology, engineering management, or the future of SaaS.</p>
+            <p class="text-muted">技術、エンジニアリングマネジメント、SaaS の今後については LinkedIn または GitHub からご連絡ください。</p>
           </div>
         </section>
       </div>
@@ -81,6 +73,8 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import { siteData } from '../data/games.js'
+
+const baseUrl = import.meta.env.BASE_URL
 
 useHead({
   title: 'About Muthukrishnan - Creator of Brain Busters | Engineering Manager',
@@ -116,7 +110,6 @@ useHead({
           "url": `${siteData.siteUrl}/about`,
           "image": `${siteData.siteUrl}/profile.png`,
           "sameAs": [
-            "https://twitter.com/krimuthu",
             "https://linkedin.com/in/krimuthu",
             "https://github.com/muthuspark"
           ],

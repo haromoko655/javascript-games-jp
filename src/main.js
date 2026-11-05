@@ -6,7 +6,7 @@ export const createApp = ViteSSG(
   App,
   {
     routes,
-    base: '/'
+    base: import.meta.env.BASE_URL
   },
   ({ router, isClient }) => {
     // Track page views on route change

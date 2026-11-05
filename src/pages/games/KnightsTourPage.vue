@@ -12,18 +12,18 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="container">
         <div class="board" id="board"></div>
         <div class="controls">
-          <button onclick="resetGame()">New Game</button>
-          <button onclick="showHint()">Show Hint</button>
+          <button onclick="resetGame()">新しいゲーム</button>
+          <button onclick="showHint()">ヒントを表示</button>
         </div>
 
         <div class="status" id="status"></div>
 
         <div class="best-scores">
-          <h3>Best Scores</h3>
+          <h3>ベストスコア</h3>
           <div id="bestScores"></div>
         </div>
       </div>
@@ -32,8 +32,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -57,24 +57,24 @@ const game = {
   description: "Move a chess knight to visit every square exactly once. Classic mathematical puzzle with hints available.",
   metaDescription: "Play the Knight's Tour puzzle online. Move a chess knight to visit every square on the board exactly once. Classic Hamiltonian path puzzle.",
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Chess', 'Math Games'],
+  categories: ['パズル', 'チェス', '数学'],
   keywords: ['knights tour', 'chess puzzle', 'knight moves', 'hamiltonian path', 'chess game'],
   initCode: 'initializeGame();',
   faqs: [
     {
-      question: "What is the Knight's Tour?",
-      answer: "A puzzle where you move a chess knight to visit every square on the board exactly once. The knight moves in an L-shape: two squares in one direction, then one square perpendicular."
+      question: "ナイトツアーとは何ですか？",
+      answer: "チェスのナイトを動かし、盤面のすべてのマスを一度ずつ訪れるパズルです。ナイトは一方向に2マス、その直角方向に1マス進みます。"
     },
     {
-      question: "Is there always a solution to the Knight's Tour?",
-      answer: "On a standard 8x8 board, solutions exist starting from any square. Smaller boards may not have solutions from all starting positions."
+      question: "ナイトツアーは必ず解けますか？",
+      answer: "標準的な8×8盤面では、どのマスから始めても解があります。小さな盤面では、開始位置によって解けない場合があります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

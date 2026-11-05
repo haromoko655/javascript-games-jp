@@ -193,13 +193,13 @@
             gameOver = true;
             if (currentPlayer === 'human') {
                 GamePopup.show({
-                    title: 'Better luck next time!',
-                    message: 'You took the last object. The AI wins!'
+                    title: '次はがんばりましょう！',
+                    message: '最後の石を取りました。コンピューターの勝ちです！'
                 });
             } else {
                 GamePopup.show({
-                    title: 'Congratulations!',
-                    message: 'The AI took the last object. You win!',
+                    title: 'クリアおめでとう！',
+                    message: 'コンピューターが最後の石を取りました。あなたの勝ちです！',
                     showConfetti: true
                 });
             }
@@ -251,7 +251,7 @@
         if (selectedPile === null || currentPlayer !== 'human') return;
 
         if (count > piles[selectedPile]) {
-            showMessage('Cannot take more than available!', 'error');
+            showMessage('山にある数を超えて取ることはできません！', 'error');
             return;
         }
 
@@ -272,14 +272,14 @@
     function updateStatus() {
         const statusEl = document.getElementById('gameStatus');
         if (gameOver) {
-            statusEl.textContent = 'Game Over';
+            statusEl.textContent = 'ゲームオーバー';
         } else if (currentPlayer === 'human') {
-            statusEl.textContent = 'Your turn - Select a pile';
+            statusEl.textContent = 'あなたの番です - 山を選んでください';
             if (selectedPile !== null) {
-                statusEl.textContent = `Pile ${selectedPile + 1} selected - Choose how many to take`;
+                statusEl.textContent = `山${selectedPile + 1}を選択中 - 取る数を選んでください`;
             }
         } else {
-            statusEl.textContent = 'AI is thinking...';
+            statusEl.textContent = 'コンピューターが考えています…';
         }
     }
 
@@ -305,7 +305,7 @@
 
             const pileLabel = document.createElement('div');
             pileLabel.className = 'pile-label';
-            pileLabel.textContent = `Pile ${pileIndex + 1}`;
+            pileLabel.textContent = `山${pileIndex + 1}`;
 
             const objectsDiv = document.createElement('div');
             objectsDiv.className = 'pile-objects';
@@ -318,7 +318,7 @@
 
             const countDiv = document.createElement('div');
             countDiv.className = 'pile-count';
-            countDiv.textContent = count === 0 ? 'Empty' : `${count} object${count !== 1 ? 's' : ''}`;
+            countDiv.textContent = count === 0 ? '空' : `${count}個`;
 
             pileDiv.appendChild(pileLabel);
             pileDiv.appendChild(objectsDiv);
@@ -335,20 +335,20 @@
         buttonsContainer.innerHTML = '';
 
         if (selectedPile === null || gameOver || currentPlayer !== 'human') {
-            buttonsContainer.innerHTML = '<p class="hint">Select a pile first</p>';
+            buttonsContainer.innerHTML = '<p class="hint">先に山を選んでください</p>';
             return;
         }
 
         const maxTake = piles[selectedPile];
         if (maxTake === 0) {
-            buttonsContainer.innerHTML = '<p class="hint">This pile is empty</p>';
+            buttonsContainer.innerHTML = '<p class="hint">この山は空です</p>';
             return;
         }
 
         for (let i = 1; i <= maxTake; i++) {
             const btn = document.createElement('button');
             btn.className = 'take-btn';
-            btn.textContent = `Take ${i}`;
+            btn.textContent = `${i}個取る`;
             btn.onclick = () => takeFromPile(i);
             buttonsContainer.appendChild(btn);
         }

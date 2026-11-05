@@ -12,7 +12,7 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div id="typingspeed">
         <div class="wrapper">
           <input type="text" class="input-field">
@@ -22,27 +22,27 @@
             </div>
             <div class="content">
               <ul class="result-details">
-                <li class="time">Time Left: <span><b>60</b>s</span></li>
-                <li class="mistake">Mistakes: <span>0</span></li>
-                <li class="wpm">Words Per Minute: <span>0</span></li>
-                <li class="cpm">Characters Per Minute: <span>0</span></li>
+                <li class="time">残り時間： <span><b>60</b>秒</span></li>
+                <li class="mistake">ミス： <span>0</span></li>
+                <li class="wpm">1分あたりの単語数： <span>0</span></li>
+                <li class="cpm">1分あたりの文字数： <span>0</span></li>
               </ul>
-              <button>Try Again</button>
+              <button>もう一度</button>
             </div>
           </div>
         </div>
 
         <div class="scorecard">
-          <h2>Scorecard</h2>
+          <h2>スコア記録</h2>
           <div id="scorecard" class="grid">
             <div class="g-col-6">
               <table class="table" id="history">
                 <thead>
                   <tr>
                     <th></th>
-                    <th>WPM</th>
-                    <th>CPM</th>
-                    <th>Mistakes</th>
+                    <th>語/分</th>
+                    <th>字/分</th>
+                    <th>ミス</th>
                   </tr>
                 </thead>
                 <tbody></tbody>
@@ -63,8 +63,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -83,30 +83,30 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'typing-speed',
-  title: 'Typing Speed Test - WPM Calculator',
-  shortTitle: 'Typing Test',
-  description: 'Test your typing speed and accuracy. Measure words per minute (WPM) and characters per minute (CPM) with 60-second challenges.',
+  title: 'タイピング速度テスト',
+  shortTitle: 'タイピングテスト',
+  description: 'タイピングの速さと正確さを測定しましょう。60秒間で1分あたりの入力語数（WPM）と文字数（CPM）を計測します。',
   metaDescription: 'Free online typing speed test. Measure your WPM and accuracy in 60 seconds. Track your progress and improve your typing skills.',
   thumbnail: 'thumbnail.png',
-  categories: ['Challenge', 'Educational', 'Skills'],
+  categories: ['チャレンジ', '学習', 'スキル'],
   keywords: ['typing test', 'typing speed', 'wpm test', 'typing practice', 'keyboard speed'],
   initCode: 'const game = new TypingGame();',
   extraScripts: ['https://unpkg.com/txtgen/dist/txtgen.min.js'],
   faqs: [
     {
-      question: 'What is a good typing speed?',
-      answer: 'Average typing speed is 40 WPM. 60-70 WPM is considered good. Professional typists often exceed 80-100 WPM.'
+      question: "タイピング速度はどのくらいが目安ですか？",
+      answer: "平均的な入力速度は1分あたり約40語（WPM）です。60〜70 WPMなら速い方で、熟練者は80〜100 WPMを超えることもあります。"
     },
     {
-      question: 'How can I improve my typing speed?',
-      answer: 'Practice regularly, use proper finger placement, look at the screen instead of the keyboard, and focus on accuracy before speed.'
+      question: "タイピングを速くするには？",
+      answer: "定期的に練習し、指を正しい位置に置き、キーボードではなく画面を見ましょう。速度より正確さを優先すると上達しやすくなります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

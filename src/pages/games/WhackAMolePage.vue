@@ -12,19 +12,19 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="game-container">
         <div class="stats">
           <div>
-            <div class="label">Score</div>
+            <div class="label">スコア</div>
             <div class="value" id="score">0</div>
           </div>
           <div>
-            <div class="label">Time</div>
-            <div class="value"><span id="timeLeft">30</span>s</div>
+            <div class="label">時間</div>
+            <div class="value"><span id="timeLeft">30</span>秒</div>
           </div>
           <div>
-            <div class="label">Best</div>
+            <div class="label">ベスト</div>
             <div class="value" id="highScore">0</div>
           </div>
         </div>
@@ -34,7 +34,7 @@
         <div id="message" class="message"></div>
 
         <div class="controls">
-          <button id="startBtn" onclick="startGame()">Start Game</button>
+          <button id="startBtn" onclick="startGame()">ゲーム開始</button>
         </div>
 
         <p class="instructions">
@@ -46,8 +46,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -66,33 +66,33 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'whack-a-mole',
-  title: 'Whack-a-Mole Game - Test Your Speed',
-  shortTitle: 'Whack-a-Mole',
-  description: 'Whack the moles as they pop up from their holes! A classic arcade game that tests your reflexes. Score as many points as you can in 30 seconds.',
+  title: 'モグラたたき - 反射神経ゲーム',
+  shortTitle: 'モグラたたき',
+  description: '穴から出てくるモグラをたたきましょう。30秒間でできるだけ多く得点する定番ゲームです。',
   metaDescription: 'Play Whack-a-Mole online free. Click on moles as they pop up to score points. Classic arcade reflex game with increasing difficulty.',
   thumbnail: 'thumbnail.png',
-  categories: ['Reflex Games', 'Classic Games', 'Challenge'],
+  categories: ['反射神経', '定番', 'チャレンジ'],
   keywords: ['whack a mole', 'arcade game', 'reflex game', 'clicking game', 'speed game', 'reaction game'],
   initCode: '',
   faqs: [
     {
-      question: 'How do you play Whack-a-Mole?',
-      answer: 'Click on the moles as they pop up from their holes. Each successful hit scores one point. You have 30 seconds to score as many points as possible. The moles appear faster as your score increases!'
+      question: "モグラたたきはどう遊びますか？",
+      answer: "穴から出てくるモグラをクリックして得点します。制限時間は30秒です。得点が増えるほど、モグラの動きが速くなります。"
     },
     {
-      question: 'What is a good Whack-a-Mole score?',
-      answer: 'A score of 15-20 is good for beginners. Experienced players can score 25-35 points in 30 seconds. The key is to stay focused and anticipate where moles might appear next.'
+      question: "モグラたたきの目安スコアは？",
+      answer: "初めてなら15〜20点が目安です。慣れた人は30秒で25〜35点を取ることもあります。集中して次に出る場所を予測しましょう。"
     },
     {
-      question: 'How can I improve my Whack-a-Mole skills?',
-      answer: 'Keep your cursor near the center of the grid so you can reach any hole quickly. Stay relaxed and use quick, precise clicks. Practice regularly to improve your reaction time and pattern recognition.'
+      question: "モグラたたきが上達するには？",
+      answer: "カーソルを盤面の中央付近に置くと、どの穴にもすばやく移動できます。落ち着いて正確にクリックし、繰り返し練習しましょう。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

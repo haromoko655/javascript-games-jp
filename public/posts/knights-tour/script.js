@@ -23,7 +23,7 @@ function initializeGame() {
 
 function updateTimer() {
     const elapsed = Math.floor((Date.now() - startTime) / 1000);
-    document.getElementById('timer').textContent = `Time: ${elapsed}s`;
+    document.getElementById('timer').textContent = `時間：${elapsed}秒`;
 }
 
 function positionToKey([row, col]) {
@@ -59,15 +59,15 @@ function handleMove(row, col) {
 
 function handleWin() {
     GamePopup.show({
-        title: 'Congratulations!',
-        message: 'You completed the Knight\'s Tour!',
+        title: 'クリアおめでとう！',
+        message: 'ナイトツアーを達成しました！',
         showConfetti: true
     });
 }
 
 function handleLoss() {
     document.getElementById('status').textContent =
-        'No more moves available. Game Over!';
+        'これ以上移動できません。ゲーム終了！';
 }
 
 function renderBoard() {
@@ -119,7 +119,7 @@ function updateBestScores(time) {
 function displayBestScores() {
     const scoresDiv = document.getElementById('bestScores');
     if (bestScores.length === 0) {
-        scoresDiv.textContent = 'No scores yet';
+        scoresDiv.textContent = 'スコア記録はまだありません';
         return;
     }
 

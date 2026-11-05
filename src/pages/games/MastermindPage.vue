@@ -12,18 +12,18 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div id="game_main_container" class="game-container">
         <div id="secretCode" class="secret-code"></div>
 
         <div class="legend">
           <div class="legend-item">
             <div class="legend-pin black"></div>
-            <span>Correct color & position</span>
+            <span>色と位置が正解</span>
           </div>
           <div class="legend-item">
             <div class="legend-pin white"></div>
-            <span>Correct color, wrong position</span>
+            <span>色は正解、位置は違う</span>
           </div>
         </div>
 
@@ -32,17 +32,17 @@
         <div id="colorPalette" class="color-palette"></div>
 
         <div class="controls">
-          <button class="primary" onclick="submitGuess()">Submit Guess</button>
-          <button class="secondary" onclick="undoLastColor()">Undo</button>
-          <button class="secondary" onclick="clearCurrentGuess()">Clear</button>
-          <button class="danger" onclick="newGame()">New Game</button>
+          <button class="primary" onclick="submitGuess()">予想を送信</button>
+          <button class="secondary" onclick="undoLastColor()">一手戻す</button>
+          <button class="secondary" onclick="clearCurrentGuess()">クリア</button>
+          <button class="danger" onclick="newGame()">新しいゲーム</button>
         </div>
 
         <div class="stats">
-          <div>Guesses: <span id="guessCount">0 / 10</span></div>
-          <div>Won: <span id="gamesWon">0</span></div>
-          <div>Played: <span id="gamesPlayed">0</span></div>
-          <div>Win Rate: <span id="winRate">0%</span></div>
+          <div>予想回数： <span id="guessCount">0 / 10</span></div>
+          <div>勝利： <span id="gamesWon">0</span></div>
+          <div>プレイ回数： <span id="gamesPlayed">0</span></div>
+          <div>勝率： <span id="winRate">0%</span></div>
         </div>
 
         <div id="message" class="message"></div>
@@ -57,8 +57,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -77,37 +77,37 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'mastermind',
-  title: 'Mastermind Game - Code Breaking Puzzle',
-  shortTitle: 'Mastermind',
-  description: 'Crack the secret color code in 10 guesses or less. Use logic and deduction from feedback pegs to figure out the hidden pattern.',
+  title: 'マスターマインド - 暗号当てパズル',
+  shortTitle: 'マスターマインド',
+  description: '10回以内に隠された色の並びを当てましょう。ヒントを手がかりに論理的に推理します。',
   metaDescription: 'Play Mastermind online free. Guess the secret 4-color code using logic and deduction. Get feedback after each guess to crack the code in 10 tries.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Logic Games', 'Classic Games'],
+  categories: ['パズル', '論理', '定番'],
   keywords: ['mastermind', 'code breaker', 'logic puzzle', 'deduction game', 'color code', 'brain game'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'How do you play Mastermind?',
-      answer: 'The computer creates a secret 4-color code. You make guesses by selecting colors and submitting them. After each guess, you receive feedback: black pegs mean a color is correct and in the right position, white pegs mean a color is correct but in the wrong position. Use this feedback to deduce the secret code within 10 guesses.'
+      question: "マスターマインドはどう遊びますか？",
+      answer: "コンピューターが4色のコードを隠します。色を選んで予想を送ると、正しい色と位置を示す黒ピン、正しい色だが位置が違うことを示す白ピンでヒントが返ります。10回以内にコードを推理しましょう。"
     },
     {
-      question: 'What do the feedback pegs mean?',
-      answer: 'Black pegs indicate you have the right color in the right position. White pegs indicate you have a correct color but in the wrong position. No peg means that color is not in the code (or all instances are already accounted for). The pegs do not tell you which specific colors they refer to.'
+      question: "ヒントのピンは何を表しますか？",
+      answer: "黒ピンは色と位置の両方が正解、白ピンは色は正解で位置が違うことを示します。ピンがない場合、その色はコードに含まれないか、該当する色の数がすでに当たっています。どのピンがどの色を示すかは分かりません。"
     },
     {
-      question: 'What is a good strategy for Mastermind?',
-      answer: 'Start with a guess using different colors to gather maximum information. Pay attention to how many pegs you get. If you get 2 black pegs, try keeping 2 colors in their positions and changing the others. Eliminate colors systematically based on feedback. Some players use the "1-1-2-2" starting pattern to efficiently narrow down possibilities.'
+      question: "マスターマインドのコツは？",
+      answer: "最初は異なる色を使って多くの情報を集めましょう。黒ピンが2つなら、2色の位置を固定して残りを入れ替えてみます。ヒントをもとに候補を順番に絞ります。"
     },
     {
-      question: 'Can colors repeat in Mastermind?',
-      answer: 'In this version, yes! The secret code can contain the same color multiple times. This adds complexity because you need to consider that a color might appear more than once in the solution.'
+      question: "同じ色を複数回使えますか？",
+      answer: "はい。同じ色が答えに複数回含まれることがあります。その可能性も考慮して推理してください。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

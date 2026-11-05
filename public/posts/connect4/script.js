@@ -273,7 +273,7 @@ Game.prototype.place = function (column) {
         }
 
         if (!that.board.place(column)) {
-            return alert("Invalid move!");
+            return alert("その手は選べません！");
         }
 
         that.round = that.switchRound(that.round);
@@ -375,8 +375,8 @@ Game.prototype.updateStatus = function () {
         that.status = 1;
         that.markWin();
         GamePopup.show({
-            title: 'Congratulations!',
-            message: 'You have won!',
+            title: 'クリアおめでとう！',
+            message: 'あなたの勝ちです！',
             showConfetti: true
         });
     }
@@ -386,8 +386,8 @@ Game.prototype.updateStatus = function () {
         that.status = 2;
         that.markWin();
         GamePopup.show({
-            title: 'Better luck next time!',
-            message: 'You have lost!'
+            title: '次はがんばりましょう！',
+            message: 'あなたの負けです。'
         });
     }
 
@@ -395,8 +395,8 @@ Game.prototype.updateStatus = function () {
     if (that.board.isFull()) {
         that.status = 3;
         GamePopup.show({
-            title: 'Tie!',
-            message: 'The game ended in a draw.'
+            title: '引き分け！',
+            message: '引き分けです。'
         });
     }
 }

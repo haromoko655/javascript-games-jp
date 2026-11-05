@@ -95,13 +95,13 @@ function checkGameEnd() {
         gameOver = true;
         wins++;
         updateStats();
-        showMessage('You won! The word was: ' + currentWord, 'win');
+        showMessage('正解です！単語は「' + currentWord + '」です。', 'win');
     } else if (wrongGuesses >= MAX_WRONG) {
         gameOver = true;
         losses++;
         updateStats();
         revealWord();
-        showMessage('Game over! The word was: ' + currentWord, 'lose');
+        showMessage('ゲームオーバー！正解は「' + currentWord + '」です。', 'lose');
     }
 }
 
@@ -137,7 +137,8 @@ function updateStats() {
 }
 
 function updateHint() {
-    document.getElementById('hint').textContent = 'Category: ' + currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
+    const categoryNames = { animals: '動物', countries: '国', foods: '食べ物', sports: 'スポーツ', science: '科学' };
+    document.getElementById('hint').textContent = 'カテゴリ：' + (categoryNames[currentCategory] || currentCategory);
 }
 
 function resetHangman() {

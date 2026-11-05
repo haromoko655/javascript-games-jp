@@ -63,54 +63,54 @@
     // Puzzle silhouettes (target shapes)
     const puzzles = [
         {
-            name: 'Square',
+            name: '正方形',
             silhouette: [[0, 0], [150, 0], [150, 150], [0, 150]],
-            difficulty: 'Easy'
+            difficulty: '初級'
         },
         {
-            name: 'Triangle',
+            name: '三角形',
             silhouette: [[75, 0], [150, 150], [0, 150]],
-            difficulty: 'Easy'
+            difficulty: '初級'
         },
         {
-            name: 'Rectangle',
+            name: '長方形',
             silhouette: [[0, 0], [200, 0], [200, 100], [0, 100]],
-            difficulty: 'Easy'
+            difficulty: '初級'
         },
         {
-            name: 'Parallelogram',
+            name: '平行四辺形',
             silhouette: [[40, 0], [200, 0], [160, 100], [0, 100]],
-            difficulty: 'Medium'
+            difficulty: '中級'
         },
         {
-            name: 'House',
+            name: '家',
             silhouette: [[75, 0], [150, 60], [150, 150], [0, 150], [0, 60]],
-            difficulty: 'Medium'
+            difficulty: '中級'
         },
         {
-            name: 'Arrow',
+            name: '矢印',
             silhouette: [[75, 0], [150, 75], [110, 75], [110, 150], [40, 150], [40, 75], [0, 75]],
-            difficulty: 'Medium'
+            difficulty: '中級'
         },
         {
-            name: 'Cat',
+            name: '猫',
             silhouette: [[20, 0], [40, 30], [80, 30], [100, 0], [100, 50], [120, 80], [120, 150], [0, 150], [0, 80], [20, 50]],
-            difficulty: 'Hard'
+            difficulty: '上級'
         },
         {
-            name: 'Swan',
+            name: '白鳥',
             silhouette: [[30, 0], [50, 20], [50, 50], [100, 50], [130, 80], [130, 150], [80, 150], [80, 100], [20, 100], [0, 120], [0, 30]],
-            difficulty: 'Hard'
+            difficulty: '上級'
         },
         {
-            name: 'Boat',
+            name: '船',
             silhouette: [[60, 0], [90, 0], [90, 60], [180, 100], [160, 130], [20, 130], [0, 100], [60, 60]],
-            difficulty: 'Hard'
+            difficulty: '上級'
         },
         {
-            name: 'Runner',
+            name: '走る人',
             silhouette: [[50, 0], [70, 0], [80, 30], [100, 20], [120, 40], [100, 60], [80, 50], [70, 80], [90, 130], [70, 150], [50, 130], [40, 80], [20, 130], [0, 120], [30, 60], [40, 30]],
-            difficulty: 'Expert'
+            difficulty: 'エキスパート'
         }
     ];
 
@@ -268,7 +268,7 @@
         ctx.fillStyle = '#7f8c8d';
         ctx.font = `${12 * (canvas.width / 500)}px Arial`;
         ctx.textAlign = 'center';
-        ctx.fillText('Target Area', canvas.width / 2, targetY + targetSize + 20 * (canvas.width / 500));
+        ctx.fillText('お題の形', canvas.width / 2, targetY + targetSize + 20 * (canvas.width / 500));
 
         // Draw pieces (selected piece last so it's on top)
         pieces.forEach(piece => {
@@ -541,12 +541,12 @@
         updateStats();
 
         GamePopup.show({
-            title: 'Puzzle Complete!',
-            message: `Great job! You completed the "${currentPuzzle.name}" puzzle!`,
+            title: 'パズル完成！',
+            message: `よくできました！「${currentPuzzle.name}」のパズルを完成させました！`,
             showConfetti: true,
             buttons: [
-                { text: 'Next Puzzle', onClick: () => { GamePopup.hide(); nextPuzzle(); } },
-                { text: 'Keep Playing', onClick: () => GamePopup.hide() }
+                { text: '次の問題', onClick: () => { GamePopup.hide(); nextPuzzle(); } },
+                { text: '続ける', onClick: () => GamePopup.hide() }
             ]
         });
     }

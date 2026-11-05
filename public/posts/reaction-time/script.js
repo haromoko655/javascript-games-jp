@@ -26,22 +26,22 @@ function setState(newState) {
 
     switch (state) {
         case STATES.WAITING:
-            message.textContent = 'Click to Start';
+            message.textContent = 'クリックして開始';
             resultText.textContent = '';
             break;
         case STATES.READY:
-            message.textContent = 'Wait for green...';
+            message.textContent = '画面が緑になるまで待ってください…';
             resultText.textContent = '';
             break;
         case STATES.GO:
-            message.textContent = 'Click NOW!';
+            message.textContent = '今すぐクリック！';
             resultText.textContent = '';
             break;
         case STATES.RESULT:
-            message.textContent = 'Click to try again';
+            message.textContent = 'クリックして再挑戦';
             break;
         case STATES.TOO_EARLY:
-            message.textContent = 'Too early! Click to retry';
+            message.textContent = '早すぎます！クリックして再挑戦';
             resultText.textContent = '';
             break;
     }
@@ -95,20 +95,20 @@ function recordAttempt(time) {
 function showResult(time) {
     let rating = '';
     if (time < 200) {
-        rating = 'Incredible!';
+        rating = 'すばらしい！';
     } else if (time < 250) {
-        rating = 'Amazing!';
+        rating = 'すごい！';
     } else if (time < 300) {
-        rating = 'Great!';
+        rating = 'とても良い！';
     } else if (time < 350) {
-        rating = 'Good';
+        rating = '良い';
     } else if (time < 400) {
-        rating = 'Average';
+        rating = '平均的';
     } else {
-        rating = 'Keep practicing';
+        rating = '練習を続けましょう';
     }
 
-    resultText.innerHTML = `<span class="time">${time} ms</span><span class="rating">${rating}</span>`;
+    resultText.innerHTML = `<span class="time">${time} ミリ秒</span><span class="rating">${rating}</span>`;
 }
 
 function updateStats() {
@@ -116,8 +116,8 @@ function updateStats() {
 
     if (attempts.length > 0) {
         const avg = Math.round(attempts.reduce((a, b) => a + b, 0) / attempts.length);
-        averageDisplay.textContent = avg + ' ms';
-        bestDisplay.textContent = bestTime + ' ms';
+        averageDisplay.textContent = avg + ' ミリ秒';
+        bestDisplay.textContent = bestTime + ' ミリ秒';
     }
 }
 

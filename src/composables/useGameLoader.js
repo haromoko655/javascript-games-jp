@@ -43,7 +43,7 @@ export function useGameLoader(slug, initCode, extraScripts = []) {
 
   const loadGameAssets = async () => {
     if (disposed) return
-    const scriptPath = `/posts/${slug}/script.js`
+    const scriptPath = `${import.meta.env.BASE_URL}posts/${slug}/script.js`
 
     // Load extra scripts first (CDN libs like txtgen)
     if (extraScripts.length > 0) {
@@ -57,7 +57,7 @@ export function useGameLoader(slug, initCode, extraScripts = []) {
     if (disposed) return
 
     // Load game-specific CSS
-    const cssPath = `/posts/${slug}/style.css`
+    const cssPath = `${import.meta.env.BASE_URL}posts/${slug}/style.css`
     const existingLink = document.querySelector(`link[href="${cssPath}"]`)
     if (!existingLink) {
       const link = document.createElement('link')

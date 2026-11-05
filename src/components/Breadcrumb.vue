@@ -1,5 +1,5 @@
 <template>
-  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <nav aria-label="パンくずリスト" class="breadcrumb-nav">
     <ol class="breadcrumb mb-3" itemscope itemtype="https://schema.org/BreadcrumbList">
       <li
         v-for="(item, index) in items"

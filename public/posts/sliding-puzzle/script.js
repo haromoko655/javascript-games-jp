@@ -73,8 +73,8 @@ function handleTileClick(row, col) {
                 updateBestScore();
             }
             GamePopup.show({
-                title: 'Congratulations!',
-                message: 'You solved this level! Try beating your best score.',
+                title: 'クリアおめでとう！',
+                message: 'クリアしました！ベストスコア更新を目指しましょう。',
                 showConfetti: true
             });
         }
@@ -313,7 +313,7 @@ async function startSolving() {
     solveButton.disabled = true;
     solvingStatus.style.display = 'block';
     isSolving = true;
-    solvingStatus.textContent = 'Thinking...';
+    solvingStatus.textContent = '考えています…';
     try {
         const solution = await findSolution();
         if (solution) {
@@ -321,13 +321,13 @@ async function startSolving() {
                 await animateMove(move);
                 await new Promise(resolve => setTimeout(resolve, 300));
             }
-            solvingStatus.textContent = `Solved in ${solution.length} moves!`;
+            solvingStatus.textContent = `${solution.length}手で解けました！`;
         } else {
-            solvingStatus.textContent = 'No solution found!';
+            solvingStatus.textContent = '解答が見つかりませんでした！';
         }
     } catch (error) {
         console.error('Solving error:', error);
-        solvingStatus.textContent = 'Error solving puzzle!';
+        solvingStatus.textContent = '解答中にエラーが発生しました！';
     }
 
     isSolving = false;

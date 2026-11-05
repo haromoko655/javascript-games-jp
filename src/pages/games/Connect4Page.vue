@@ -12,7 +12,7 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div id="connect4">
         <div class="box-left">
           <table id="game_board"></table>
@@ -20,20 +20,20 @@
 
         <div class="box-right">
           <div id="options">
-            <p class="header">Difficulty</p>
+            <p class="header">難易度</p>
             <p>
               <select id="difficulty" autocomplete="off">
-                <option value="1">Level 1</option>
-                <option value="2">Level 2 (Passive)</option>
-                <option value="3">Level 3</option>
-                <option value="4" selected="selected">Level 4 (Easy)</option>
-                <option value="5">Level 5</option>
-                <option value="6">Level 6 (Moderate)</option>
-                <option value="7">Level 7</option>
-                <option value="8">Level 8 (Tougher)</option>
+                <option value="1">レベル1</option>
+                <option value="2">レベル2 （控えめ）</option>
+                <option value="3">レベル3</option>
+                <option value="4" selected="selected">レベル4 （初級）</option>
+                <option value="5">レベル5</option>
+                <option value="6">レベル6 （中級）</option>
+                <option value="7">レベル7</option>
+                <option value="8">レベル8 （上級）</option>
               </select>
             </p>
-            <p><button onclick="Game.restartGame();" type="submit">Restart game</button></p>
+            <p><button onclick="Game.restartGame();" type="submit">ゲームをやり直す</button></p>
           </div>
         </div>
       </div>
@@ -42,8 +42,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -62,29 +62,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'connect4',
-  title: 'Connect 4 Game Online - Free to Play',
-  shortTitle: 'Connect 4',
-  description: 'Play Connect 4 online against AI. Drop colored discs into a 7x6 grid and be first to connect four in a row. Multiple difficulty levels available.',
+  title: '無料オンライン四目並べ',
+  shortTitle: '四目並べ',
+  description: 'コンピューターと四目並べで対戦しましょう。7×6の盤面にコマを落とし、先に4つ並べた方が勝ちです。難易度を選べます。',
   metaDescription: 'Play Connect 4 online free against computer AI. 8 difficulty levels from beginner to expert. Classic strategy game - connect four discs to win.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Strategy Games', 'Classic Games'],
+  categories: ['パズル', '戦略', '定番'],
   keywords: ['connect 4', 'connect four', 'four in a row', 'connect 4 online', 'strategy game'],
   initCode: 'Start();',
   faqs: [
     {
-      question: 'How do you play Connect 4?',
-      answer: 'Take turns dropping colored discs into columns. The first player to connect four discs horizontally, vertically, or diagonally wins.'
+      question: "四目並べはどう遊びますか？",
+      answer: "交互に色付きのコマを列へ落とします。縦・横・斜めのいずれかに先に4つ並べた人が勝ちです。"
     },
     {
-      question: 'What is the best strategy for Connect 4?',
-      answer: 'Control the center column, build multiple threats at once, and block your opponent while setting up your own winning combinations.'
+      question: "四目並べのコツは何ですか？",
+      answer: "中央の列を押さえ、複数の勝ち筋を作りながら相手の連続を防ぎましょう。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

@@ -12,21 +12,21 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="container">
         <div class="level-select">
-          <button onclick="setLevel(3)">3x3</button>
-          <button onclick="setLevel(4)">4x4</button>
-          <button onclick="setLevel(5)">5x5</button>
+          <button onclick="setLevel(3)">3×3</button>
+          <button onclick="setLevel(4)">4×4</button>
+          <button onclick="setLevel(5)">5×5</button>
         </div>
 
         <div class="number-select" id="numberSelect"></div>
         <div class="grid" id="grid"></div>
 
         <div class="controls">
-          <button onclick="getHint()">Get Hint</button>
-          <button onclick="checkSolution()">Check Solution</button>
-          <button onclick="resetPuzzle()">Reset</button>
+          <button onclick="getHint()">ヒント</button>
+          <button onclick="checkSolution()">答え合わせ</button>
+          <button onclick="resetPuzzle()">リセット</button>
         </div>
 
         <div class="status" id="status"></div>
@@ -36,8 +36,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -56,29 +56,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'latin-square',
-  title: 'Latin Square Puzzle - Logic Number Game',
-  shortTitle: 'Latin Square',
-  description: 'Fill the grid so each number appears exactly once in each row and column. Similar to Sudoku but without box constraints.',
-  metaDescription: 'Play Latin Square puzzles online. Fill the grid so each number appears once per row and column. Great logic training game for all skill levels.',
+  title: 'ラテン方陣 - 数字の論理パズル',
+  shortTitle: 'ラテン方陣',
+  description: '各行と各列に同じ数字が一度ずつ入るようにマスを埋めましょう。数独に似ていますが、ブロックの制約はありません。',
+  metaDescription: 'Play Latin 四角形 puzzles online. Fill the grid so each number appears once per row and column. Great logic training game for all skill levels.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Logic Games', 'Number Games'],
+  categories: ['パズル', '論理', '数字'],
   keywords: ['latin square', 'logic puzzle', 'number grid', 'latin square puzzle', 'math puzzle'],
   initCode: 'initializePuzzle(); renderGrid();',
   faqs: [
     {
-      question: 'What is a Latin Square?',
-      answer: 'A Latin Square is a grid where each symbol (usually numbers) appears exactly once in each row and once in each column.'
+      question: "ラテン方陣とは何ですか？",
+      answer: "各記号（通常は数字）が、各行と各列に一度ずつ現れるように並べるパズルです。"
     },
     {
-      question: 'How is Latin Square different from Sudoku?',
-      answer: 'Latin Square only requires unique numbers in rows and columns. Sudoku adds the constraint of unique numbers in 3x3 boxes too.'
+      question: "ラテン方陣と数独の違いは何ですか？",
+      answer: "ラテン方陣では各行と各列の重複を避けます。数独にはそれに加えて、3×3ブロック内の重複を避けるルールがあります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

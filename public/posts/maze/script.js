@@ -97,8 +97,8 @@ function movePlayer(dx, dy) {
         // Check for win
         if (newX === endPos.x && newY === endPos.y) {
             GamePopup.show({
-                title: 'Congratulations!',
-                message: 'You conquered the maze!',
+                title: 'クリアおめでとう！',
+                message: '迷路をクリアしました！',
                 showConfetti: true
             });
         }

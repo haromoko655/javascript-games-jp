@@ -12,14 +12,14 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="controls">
         <div class="difficulty-buttons">
-          <button class="btn btn-success" onclick="setDifficulty('easy')">Easy</button>
-          <button class="btn btn-warning" onclick="setDifficulty('medium')">Medium</button>
-          <button class="btn btn-danger" onclick="setDifficulty('hard')">Hard</button>
+          <button class="btn btn-success" onclick="setDifficulty('easy')">初級</button>
+          <button class="btn btn-warning" onclick="setDifficulty('medium')">中級</button>
+          <button class="btn btn-danger" onclick="setDifficulty('hard')">上級</button>
         </div>
-        <button class="btn btn-info" onclick="initGame()">New Game</button>
+        <button class="btn btn-info" onclick="initGame()">新しいゲーム</button>
         <div id="mine-count"></div>
       </div>
       <div id="status" class="status"></div>
@@ -29,8 +29,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -49,29 +49,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'minesweeper',
-  title: 'Minesweeper Online - Classic Puzzle Game',
-  shortTitle: 'Minesweeper',
-  description: 'Play classic Minesweeper online. Reveal squares while avoiding hidden mines. Numbers indicate adjacent mines. Three difficulty levels available.',
+  title: 'マインスイーパー - 定番パズル',
+  shortTitle: 'マインスイーパー',
+  description: '隠れた地雷を避けながらマスを開きましょう。数字は隣接する地雷の数を示します。3段階の難易度があります。',
   metaDescription: 'Play Minesweeper online free with easy, medium, and hard modes. Classic puzzle game - uncover squares without hitting mines. No download needed.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Logic Games', 'Classic Games'],
+  categories: ['パズル', '論理', '定番'],
   keywords: ['minesweeper', 'minesweeper online', 'mine sweeper game', 'puzzle game', 'logic puzzle'],
   initCode: 'initGame();',
   faqs: [
     {
-      question: 'How do you play Minesweeper?',
-      answer: 'Click to reveal squares. Numbers show how many mines are adjacent. Right-click to flag suspected mines. Reveal all non-mine squares to win.'
+      question: "マインスイーパーはどう遊びますか？",
+      answer: "マスをクリックして開きます。数字は周囲にある地雷の数です。地雷がありそうな場所には右クリックで旗を立て、地雷以外のマスをすべて開けばクリアです。"
     },
     {
-      question: 'What do the numbers mean in Minesweeper?',
-      answer: 'Each number indicates how many of the 8 surrounding squares contain mines. Use this information to deduce safe squares.'
+      question: "数字は何を表していますか？",
+      answer: "数字は周囲8マスにある地雷の数です。この情報から安全なマスを推理します。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

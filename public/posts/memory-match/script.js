@@ -151,7 +151,7 @@ function updateMoves() {
 function updateBestScore() {
     const best = bestScores[currentLevel];
     if (best) {
-        document.getElementById('bestScore').textContent = `${best.moves} moves`;
+        document.getElementById('bestScore').textContent = `${best.moves}手`;
     } else {
         document.getElementById('bestScore').textContent = '-';
     }
@@ -168,8 +168,8 @@ function endGame() {
     }
 
     GamePopup.show({
-        title: 'Congratulations!',
-        message: `Completed in ${moves} moves and ${formatTime(seconds)}!`,
+        title: 'クリアおめでとう！',
+        message: `${moves}手、${formatTime(seconds)}でクリアしました！`,
         showConfetti: true
     });
 }

@@ -12,30 +12,30 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="game-container">
         <div class="controls">
           <select id="levelSelect" class="level-select" onchange="changeLevel()">
-            <option value="1">Level 1 (3x3)</option>
-            <option value="2">Level 2 (3x4)</option>
-            <option value="3">Level 3 (4x4)</option>
-            <option value="4">Level 4 (4x5)</option>
-            <option value="5">Level 5 (5x5)</option>
-            <option value="6">Level 6 (5x6)</option>
-            <option value="7">Level 7 (6x6)</option>
-            <option value="8">Level 8 (6x7)</option>
-            <option value="9">Level 9 (7x7)</option>
-            <option value="10">Level 10 (7x8)</option>
+            <option value="1">レベル1（3×3）</option>
+            <option value="2">レベル2（3×4）</option>
+            <option value="3">レベル3（4×4）</option>
+            <option value="4">レベル4（4×5）</option>
+            <option value="5">レベル5（5×5）</option>
+            <option value="6">レベル6（5×6）</option>
+            <option value="7">レベル7（6×6）</option>
+            <option value="8">レベル8（6×7）</option>
+            <option value="9">レベル9（7×7）</option>
+            <option value="10">レベル10（7×8）</option>
           </select>
-          <button onclick="newGame()">New Game</button>
-          <button onclick="shuffleBoard()">Shuffle</button>
-          <button onclick="startSolving()" class="solve" id="solveButton">Ai Solve Puzzle</button>
+          <button onclick="newGame()">新しいゲーム</button>
+          <button onclick="shuffleBoard()">シャッフル</button>
+          <button onclick="startSolving()" class="solve" id="solveButton">自動で解く</button>
         </div>
         <div class="stats">
-          <div>Moves: <span id="moveCount">0</span></div>
-          <div>Best Score: <span id="bestScore">-</span></div>
+          <div>手数： <span id="moveCount">0</span></div>
+          <div>ベストスコア： <span id="bestScore">-</span></div>
         </div>
-        <div id="solvingStatus" class="solving-status" style="display: none;">Solving puzzle...</div>
+        <div id="solvingStatus" class="solving-status" style="display: none;">パズルを解いています…</div>
         <div class="board"></div>
       </div>
     </section>
@@ -43,8 +43,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -63,29 +63,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'sliding-puzzle',
-  title: 'Sliding Puzzle Game - Number Tile Puzzle',
-  shortTitle: 'Sliding Puzzle',
-  description: 'Slide numbered tiles to arrange them in order. Choose from 3x3 to 7x8 grid sizes. Features AI solver to demonstrate solutions.',
+  title: 'スライドパズル - 数字を並べよう',
+  shortTitle: 'スライドパズル',
+  description: '数字のタイルをスライドさせて順番に並べましょう。3×3から7×8までの盤面を選べます。解答例の表示機能もあります。',
   metaDescription: 'Play sliding tile puzzles online free. Arrange numbered tiles in order by sliding them. 10 difficulty levels with AI solver. Classic 15 puzzle.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Logic Games'],
+  categories: ['パズル', '論理'],
   keywords: ['sliding puzzle', '15 puzzle', 'tile puzzle', 'number puzzle', 'sliding tile game'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'How do you solve a sliding puzzle?',
-      answer: 'Slide tiles into the empty space to rearrange them in numerical order. Start by solving the top row, then work your way down.'
+      question: "スライドパズルはどう解きますか？",
+      answer: "タイルを空きマスへ動かして、数字の順に並べます。まず一番上の段をそろえ、次に下の段へ進むと解きやすくなります。"
     },
     {
-      question: 'What is the 15 puzzle?',
-      answer: 'The 15 puzzle is a classic sliding puzzle with 15 numbered tiles in a 4x4 grid. You slide tiles to arrange them from 1 to 15.'
+      question: "15パズルとは何ですか？",
+      answer: "4×4の盤面にある15枚の数字タイルを、1から15の順に並べる定番のスライドパズルです。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

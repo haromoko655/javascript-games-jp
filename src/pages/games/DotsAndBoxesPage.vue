@@ -12,32 +12,32 @@
       </div>
     </header>
 
-    <section id="game_main_container" class="game-section" aria-label="Game Area">
+    <section id="game_main_container" class="game-section" aria-label="ゲームエリア">
       <div class="game-container">
         <div class="controls">
           <select id="gridSizeSelect" class="grid-select" onchange="changeGridSize()">
-            <option value="3">3x3 (2x2 boxes)</option>
-            <option value="4" selected>4x4 (3x3 boxes)</option>
-            <option value="5">5x5 (4x4 boxes)</option>
-            <option value="6">6x6 (5x5 boxes)</option>
+            <option value="3">3×3（四角形2×2個）</option>
+            <option value="4" selected>4×4（四角形3×3個）</option>
+            <option value="5">5×5（四角形4×4個）</option>
+            <option value="6">6×6（四角形5×5個）</option>
           </select>
           <select id="difficultySelect" class="difficulty-select" onchange="changeDifficulty()">
-            <option value="easy">Easy</option>
-            <option value="medium" selected>Medium</option>
-            <option value="hard">Hard</option>
+            <option value="easy">初級</option>
+            <option value="medium" selected>中級</option>
+            <option value="hard">上級</option>
           </select>
-          <button onclick="newGame()">New Game</button>
+          <button onclick="newGame()">新しいゲーム</button>
         </div>
 
-        <div id="gameStatus" class="game-status">Your turn - Click a line to draw</div>
+        <div id="gameStatus" class="game-status">あなたの番です - 線を引いてください</div>
 
         <div class="score-board">
           <div class="score-item player-1">
-            <div class="score-label">You</div>
+            <div class="score-label">あなた</div>
             <div class="score-value" id="playerScore">0</div>
           </div>
           <div class="score-item player-2">
-            <div class="score-label">AI</div>
+            <div class="score-label">コンピューター</div>
             <div class="score-value" id="aiScore">0</div>
           </div>
         </div>
@@ -47,21 +47,21 @@
         <div class="legend">
           <div class="legend-item">
             <div class="legend-color player-1"></div>
-            <span>Your boxes</span>
+            <span>あなたの四角形</span>
           </div>
           <div class="legend-item">
             <div class="legend-color player-2"></div>
-            <span>AI boxes</span>
+            <span>相手の四角形</span>
           </div>
         </div>
 
         <div class="rules">
-          <h4>How to Play</h4>
+          <h4>遊び方</h4>
           <ul>
-            <li>Click on a line between two dots to draw it</li>
-            <li>Complete a box by drawing its fourth side to claim it</li>
-            <li>When you complete a box, you get another turn</li>
-            <li>The player with the most boxes at the end wins</li>
+            <li>隣り合う2つの点の間をクリックして線を引きます</li>
+            <li>4辺目を引いて四角形を完成させると獲得できます</li>
+            <li>四角形を完成させると、もう一度手番があります</li>
+            <li>最後に四角形を多く獲得した人の勝ちです</li>
           </ul>
         </div>
       </div>
@@ -70,8 +70,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -90,33 +90,33 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'dots-and-boxes',
-  title: 'Dots and Boxes Game - Connect the Dots',
-  shortTitle: 'Dots and Boxes',
-  description: 'Play Dots and Boxes against AI. Draw lines between dots to complete boxes and score points. Classic pencil-and-paper strategy game.',
+  title: '点と箱 - 線をつないで陣取り',
+  shortTitle: '点と箱',
+  description: 'コンピューターと点と箱で対戦しましょう。点を線で結んで四角を完成させ、得点を競う定番ゲームです。',
   metaDescription: 'Play Dots and Boxes online free against AI. Draw lines between dots to complete squares. Classic strategy game with multiple grid sizes and difficulty levels.',
   thumbnail: 'thumbnail.png',
-  categories: ['Strategy Games', 'Classic Games', 'Puzzles'],
+  categories: ['戦略', '定番', 'パズル'],
   keywords: ['dots and boxes', 'connect the dots', 'squares game', 'pencil paper game', 'strategy game', 'two player game', 'classic game'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'What is Dots and Boxes and how do you play?',
-      answer: 'Dots and Boxes is a classic pencil-and-paper game for two players. The game starts with a grid of dots. Players take turns drawing horizontal or vertical lines between adjacent dots. When a player draws the fourth side of a box, they claim that box and get another turn. The player with the most boxes when the grid is full wins.'
+      question: "点と箱はどう遊びますか？",
+      answer: "点が並んだ盤面で、隣り合う点を交互に線で結びます。四角形の4辺目を引くとその四角形を獲得し、もう一度手番があります。盤面が埋まったとき、獲得数が多い人の勝ちです。"
     },
     {
-      question: 'What is the best strategy for Dots and Boxes?',
-      answer: 'The key strategy is to avoid drawing the third side of any box, as this gives your opponent a free box. Try to create chains where completing one box leads to completing many more. Sometimes sacrificing a few boxes early can let you claim a larger chain later. The AI on hard difficulty uses these strategic concepts.'
+      question: "点と箱のコツは何ですか？",
+      answer: "四角形の3辺目を不用意に引くと、相手に完成させられてしまいます。複数の四角形を連続して取れるよう、線を引く順番を考えましょう。"
     },
     {
-      question: 'What do the different difficulty levels mean?',
-      answer: 'Easy: AI makes random moves. Medium: AI captures available boxes but sometimes makes suboptimal moves. Hard: AI uses strategic thinking to avoid giving away boxes and tries to create winning chains. Try the larger grid sizes for more complex games!'
+      question: "難易度の違いは何ですか？",
+      answer: "初級のコンピューターはランダムに線を引きます。中級は取れる四角形を優先します。上級は相手に四角形を渡さない手や、連続して取れる形を考えます。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

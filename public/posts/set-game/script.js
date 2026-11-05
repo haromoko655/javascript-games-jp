@@ -244,9 +244,9 @@
         const sets = findAllSets();
         if (sets.length === 0) {
             GamePopup.show({
-                title: 'No Sets',
-                message: 'There are no valid sets on the board. Add more cards!',
-                buttons: [{ text: 'OK', onClick: () => {} }]
+                title: 'セットがありません',
+                message: '盤面にセットがありません。カードを追加してください！',
+                buttons: [{ text: '了解', onClick: () => {} }]
             });
             return;
         }
@@ -311,9 +311,9 @@
     function endGame() {
         stopTimer();
         GamePopup.show({
-            title: 'Game Complete!',
-            message: `You found ${setsFound} sets in ${formatTime(seconds)}!`,
-            buttons: [{ text: 'Play Again', onClick: newGame }],
+            title: 'ゲームクリア！',
+            message: `${formatTime(seconds)}でセットを${setsFound}個見つけました！`,
+            buttons: [{ text: 'もう一度遊ぶ', onClick: newGame }],
             showConfetti: true
         });
     }

@@ -2,285 +2,285 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://games.muthu.co/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://games.muthu.co/about</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/about</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/sudoku/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/sudoku/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/sudoku/thumbnail.png</image:loc>
-      <image:title>Play Sudoku Online Free</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/sudoku/thumbnail.png</image:loc>
+      <image:title>無料オンライン数独</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/maze/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/maze/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/maze/thumbnail.png</image:loc>
-      <image:title>Maze Game Online - Navigate Through Puzzles</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/maze/thumbnail.png</image:loc>
+      <image:title>オンライン迷路ゲーム</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/tic-tac-toe/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/tic-tac-toe/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/tic-tac-toe/thumbnail.png</image:loc>
-      <image:title>Tic Tac Toe Online - Play Against AI</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/tic-tac-toe/thumbnail.png</image:loc>
+      <image:title>○×ゲーム - コンピューター対戦</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/connect4/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/connect4/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/connect4/thumbnail.png</image:loc>
-      <image:title>Connect 4 Game Online - Free to Play</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/connect4/thumbnail.png</image:loc>
+      <image:title>無料オンライン四目並べ</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/minesweeper/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/minesweeper/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/minesweeper/thumbnail.png</image:loc>
-      <image:title>Minesweeper Online - Classic Puzzle Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/minesweeper/thumbnail.png</image:loc>
+      <image:title>マインスイーパー - 定番パズル</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/word-search/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/word-search/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/word-search/thumbnail.png</image:loc>
-      <image:title>Word Search Puzzle - Find Hidden Words</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/word-search/thumbnail.png</image:loc>
+      <image:title>ワードサーチ - 隠れた言葉を探そう</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/sliding-puzzle/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/sliding-puzzle/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/sliding-puzzle/thumbnail.png</image:loc>
-      <image:title>Sliding Puzzle Game - Number Tile Puzzle</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/sliding-puzzle/thumbnail.png</image:loc>
+      <image:title>スライドパズル - 数字を並べよう</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/latin-square/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/latin-square/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/latin-square/thumbnail.png</image:loc>
-      <image:title>Latin Square Puzzle - Logic Number Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/latin-square/thumbnail.png</image:loc>
+      <image:title>ラテン方陣 - 数字の論理パズル</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/magicsquare/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/magicsquare/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/magicsquare/thumbnail.png</image:loc>
-      <image:title>Magic Square Puzzle - Math Brain Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/magicsquare/thumbnail.png</image:loc>
+      <image:title>魔方陣 - 数字パズル</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/n-queens/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/n-queens/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/n-queens/thumbnail.png</image:loc>
-      <image:title>N-Queens Puzzle - Chess Logic Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/n-queens/thumbnail.png</image:loc>
+      <image:title>Nクイーン - チェスの論理パズル</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/knights-tour/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/knights-tour/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/knights-tour/thumbnail.png</image:loc>
-      <image:title>Knight's Tour Puzzle - Chess Movement Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/knights-tour/thumbnail.png</image:loc>
+      <image:title>ナイトツアー - チェスの駒で巡るパズル</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/typing-speed/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/typing-speed/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/typing-speed/thumbnail.png</image:loc>
-      <image:title>Typing Speed Test - WPM Calculator</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/typing-speed/thumbnail.png</image:loc>
+      <image:title>タイピング速度テスト</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/memory-match/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/memory-match/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/memory-match/thumbnail.png</image:loc>
-      <image:title>Memory Match Game - Card Matching Puzzle</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/memory-match/thumbnail.png</image:loc>
+      <image:title>神経衰弱 - カード合わせ</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/hangman/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/hangman/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/hangman/thumbnail.png</image:loc>
-      <image:title>Hangman Game - Word Guessing Puzzle</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/hangman/thumbnail.png</image:loc>
+      <image:title>ハングマン - 単語当てゲーム</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/lights-out/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/lights-out/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/lights-out/thumbnail.png</image:loc>
-      <image:title>Lights Out Puzzle - Turn Off All Lights</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/lights-out/thumbnail.png</image:loc>
+      <image:title>ライツアウト - 明かりを消そう</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/simon-says/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/simon-says/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/simon-says/thumbnail.png</image:loc>
-      <image:title>Simon Says Game - Memory Sequence Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/simon-says/thumbnail.png</image:loc>
+      <image:title>サイモン - 順番記憶ゲーム</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/reaction-time/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/reaction-time/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/reaction-time/thumbnail.png</image:loc>
-      <image:title>Reaction Time Test - Test Your Reflexes</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/reaction-time/thumbnail.png</image:loc>
+      <image:title>反応速度テスト - 反射神経に挑戦</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/whack-a-mole/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/whack-a-mole/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/whack-a-mole/thumbnail.png</image:loc>
-      <image:title>Whack-a-Mole Game - Test Your Speed</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/whack-a-mole/thumbnail.png</image:loc>
+      <image:title>モグラたたき - 反射神経ゲーム</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/mastermind/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/mastermind/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/mastermind/thumbnail.png</image:loc>
-      <image:title>Mastermind Game - Code Breaking Puzzle</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/mastermind/thumbnail.png</image:loc>
+      <image:title>マスターマインド - 暗号当てパズル</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/bulls-and-cows/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/bulls-and-cows/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/bulls-and-cows/thumbnail.png</image:loc>
-      <image:title>Bulls and Cows - Number Guessing Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/bulls-and-cows/thumbnail.png</image:loc>
+      <image:title>ブルズ＆カウズ - 数字当てゲーム</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/nim/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/nim/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/nim/thumbnail.png</image:loc>
-      <image:title>Nim Game - Strategic Object Removal</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/nim/thumbnail.png</image:loc>
+      <image:title>ニム - 戦略ゲーム</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/dots-and-boxes/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/dots-and-boxes/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/dots-and-boxes/thumbnail.png</image:loc>
-      <image:title>Dots and Boxes Game - Connect the Dots</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/dots-and-boxes/thumbnail.png</image:loc>
+      <image:title>点と箱 - 線をつないで陣取り</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/hex/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/hex/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/hex/thumbnail.png</image:loc>
-      <image:title>Hex Game - Connection Strategy Puzzle</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/hex/thumbnail.png</image:loc>
+      <image:title>ヘックス - 接続戦略パズル</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/set-game/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/set-game/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/set-game/thumbnail.png</image:loc>
-      <image:title>Set Game - Find Matching Card Sets</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/set-game/thumbnail.png</image:loc>
+      <image:title>セット - カードの組み合わせ探し</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/tangram/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/tangram/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/tangram/thumbnail.png</image:loc>
-      <image:title>Tangram Puzzle - Classic Shape Puzzle Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/tangram/thumbnail.png</image:loc>
+      <image:title>タングラム - シルエットパズル</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/binary-puzzle/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/binary-puzzle/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/binary-puzzle/thumbnail.png</image:loc>
-      <image:title>Binary Puzzle (Takuzu) - Logic Number Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/binary-puzzle/thumbnail.png</image:loc>
+      <image:title>バイナリパズル（タクズ）</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/sokoban/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://haromoko655.github.io/javascript-games-jp/posts/sokoban/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://games.muthu.co/posts/sokoban/thumbnail.png</image:loc>
-      <image:title>Sokoban - Classic Box Pushing Puzzle Game</image:title>
+      <image:loc>https://haromoko655.github.io/javascript-games-jp/posts/sokoban/thumbnail.png</image:loc>
+      <image:title>倉庫番 - 箱押しパズル</image:title>
     </image:image>
   </url>
 </urlset>

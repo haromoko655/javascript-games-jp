@@ -1,6 +1,6 @@
 (function() {
 const COLORS = ['#e74c3c', '#3498db', '#2ecc71', '#f1c40f', '#9b59b6', '#e67e22'];
-const COLOR_NAMES = ['Red', 'Blue', 'Green', 'Yellow', 'Purple', 'Orange'];
+const COLOR_NAMES = ['赤', '青', '緑', '黄', '紫', 'オレンジ'];
 const MAX_GUESSES = 10;
 const CODE_LENGTH = 4;
 
@@ -111,7 +111,7 @@ function undoLastColor() {
 function submitGuess() {
     if (gameOver) return;
     if (currentGuess.length !== CODE_LENGTH) {
-        showMessage('Please select ' + CODE_LENGTH + ' colors', 'warning');
+        showMessage('色を' + CODE_LENGTH + '個選んでください', 'warning');
         return;
     }
 
@@ -126,7 +126,7 @@ function submitGuess() {
         gamesWon++;
         gamesPlayed++;
         updateStats();
-        showMessage('You cracked the code in ' + guesses.length + ' guesses!', 'success');
+        showMessage('正解です！' + guesses.length + '回でコードを解きました！', 'success');
         revealCode();
         return;
     }
@@ -135,7 +135,7 @@ function submitGuess() {
         gameOver = true;
         gamesPlayed++;
         updateStats();
-        showMessage('Game over! The code was hidden above.', 'error');
+        showMessage('ゲームオーバー！正解は上に表示されています。', 'error');
         revealCode();
         return;
     }

@@ -12,16 +12,16 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div id="game_main_container">
         <div class="puzzle-info">
           <div class="puzzle-preview">
-            <h3>Target Shape</h3>
+            <h3>お題の形</h3>
             <canvas id="puzzleCanvas" width="200" height="200"></canvas>
           </div>
           <div class="puzzle-details">
-            <h2 id="puzzleName">Square</h2>
-            <span class="difficulty" id="puzzleDifficulty">Easy</span>
+            <h2 id="puzzleName">四角形</h2>
+            <span class="difficulty" id="puzzleDifficulty">初級</span>
             <div class="stats">
               Completed: <span id="completedCount">0</span> / <span id="totalPuzzles">10</span>
             </div>
@@ -32,47 +32,47 @@
 
         <div class="controls">
           <div class="control-group">
-            <button onclick="prevPuzzle()" class="btn-nav" title="Previous puzzle">
-              <i class="bi bi-chevron-left"></i> Prev
+            <button onclick="prevPuzzle()" class="btn-nav" title="前の問題">
+              <i class="bi bi-chevron-left"></i> 前の面
             </button>
-            <button onclick="nextPuzzle()" class="btn-nav" title="Next puzzle">
-              Next <i class="bi bi-chevron-right"></i>
+            <button onclick="nextPuzzle()" class="btn-nav" title="次の問題">
+              次の面 <i class="bi bi-chevron-right"></i>
             </button>
           </div>
           <div class="control-group">
-            <button onclick="rotateCCW()" class="btn-rotate" title="Rotate counter-clockwise (E)">
+            <button onclick="rotateCCW()" class="btn-rotate" title="反時計回りに回転（E）">
               <i class="bi bi-arrow-counterclockwise"></i>
             </button>
-            <button onclick="rotateCW()" class="btn-rotate" title="Rotate clockwise (R)">
+            <button onclick="rotateCW()" class="btn-rotate" title="時計回りに回転（R）">
               <i class="bi bi-arrow-clockwise"></i>
             </button>
-            <button onclick="flip()" class="btn-flip" title="Flip parallelogram (F)">
+            <button onclick="flip()" class="btn-flip" title="平行四辺形を反転（F）">
               <i class="bi bi-symmetry-horizontal"></i> Flip
             </button>
           </div>
           <div class="control-group">
-            <button onclick="shufflePieces()" class="btn-action" title="Shuffle all pieces">
-              <i class="bi bi-shuffle"></i> Shuffle
+            <button onclick="shufflePieces()" class="btn-action" title="すべてのピースをシャッフル">
+              <i class="bi bi-shuffle"></i> シャッフル
             </button>
-            <button onclick="resetCurrentPuzzle()" class="btn-reset" title="Reset pieces">
-              <i class="bi bi-arrow-repeat"></i> Reset
+            <button onclick="resetCurrentPuzzle()" class="btn-reset" title="ピースを初期配置に戻す">
+              <i class="bi bi-arrow-repeat"></i> リセット
             </button>
           </div>
           <div class="control-group">
-            <button onclick="markComplete()" class="btn-complete" title="Mark puzzle as complete">
-              <i class="bi bi-check-lg"></i> Done
+            <button onclick="markComplete()" class="btn-complete" title="パズルを完成にする">
+              <i class="bi bi-check-lg"></i> 完了
             </button>
           </div>
         </div>
 
         <div class="instructions">
-          <h4>How to Play</h4>
+          <h4>遊び方</h4>
           <ul>
-            <li><strong>Drag</strong> pieces to move them into position</li>
-            <li><strong>Click a piece</strong> to select it, then use <kbd>R</kbd>/<kbd>E</kbd> to rotate</li>
-            <li><strong>Press <kbd>F</kbd></strong> to flip the parallelogram (pink piece)</li>
-            <li>Arrange all 7 pieces to match the target silhouette</li>
-            <li>Click <strong>Done</strong> when you've completed the puzzle</li>
+            <li><strong>ドラッグ</strong> して配置します</li>
+            <li><strong>ピースをクリック</strong> して選択し、 <kbd>R</kbd>/<kbd>E</kbd>キーで回転します</li>
+            <li><kbd>F</kbd>キーで平行四辺形（ピンクのピース）を反転します</li>
+            <li>7つのピースを並べてお題のシルエットを完成させます</li>
+            <li>クリック <strong>完了</strong> するとパズルが完成します</li>
           </ul>
         </div>
       </div>
@@ -81,8 +81,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -101,37 +101,37 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'tangram',
-  title: 'Tangram Puzzle - Classic Shape Puzzle Game',
-  shortTitle: 'Tangram',
-  description: 'Arrange seven geometric pieces to match silhouette puzzles. Drag, rotate, and flip pieces to create shapes. A timeless Chinese puzzle game.',
+  title: 'タングラム - シルエットパズル',
+  shortTitle: 'タングラム',
+  description: '7つのピースを動かし、回転・反転させてシルエットに合わせましょう。昔から親しまれている図形パズルです。',
   metaDescription: 'Play free Tangram puzzles online. Arrange 7 geometric shapes to match silhouettes. Classic Chinese dissection puzzle with multiple difficulty levels.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Pattern Games', 'Classic Games'],
+  categories: ['パズル', '図形', '定番'],
   keywords: ['tangram', 'tangram puzzle', 'shape puzzle', 'chinese puzzle', 'geometric puzzle', 'tangram online', 'brain teaser'],
   initCode: 'initGame();',
   faqs: [
     {
-      question: 'What is a Tangram puzzle?',
-      answer: 'Tangram is an ancient Chinese dissection puzzle consisting of seven flat pieces called tans. The objective is to arrange all seven pieces to form a specific shape shown as a silhouette, using all pieces without overlapping.'
+      question: "タングラムとは何ですか？",
+      answer: "7枚の平たいピースを組み合わせて形を作る、中国発祥のパズルです。すべてのピースを重ねずに使い、シルエットと同じ形を作ります。"
     },
     {
-      question: 'What are the seven Tangram pieces?',
-      answer: 'A traditional Tangram consists of: 2 large triangles, 1 medium triangle, 2 small triangles, 1 square, and 1 parallelogram. Together they form a square, but can create thousands of different shapes.'
+      question: "タングラムの7つのピースは何ですか？",
+      answer: "大きな三角形が2枚、中くらいの三角形が1枚、小さな三角形が2枚、正方形が1枚、平行四辺形が1枚です。組み合わせてさまざまな形を作れます。"
     },
     {
-      question: 'How do I rotate pieces in this game?',
-      answer: 'Click on a piece to select it, then press R to rotate clockwise or E to rotate counter-clockwise. You can also use the rotation buttons on screen. Pieces rotate in 45-degree increments.'
+      question: "このゲームでピースを回転するには？",
+      answer: "ピースをクリックして選び、Rキーで時計回り、Eキーで反時計回りに回転します。画面上の回転ボタンも使えます。45度ずつ回転します。"
     },
     {
-      question: 'Can I flip pieces in Tangram?',
-      answer: 'Only the parallelogram (pink piece) can be flipped. Select it and press F or use the Flip button. This is because the parallelogram is the only piece that has a different shape when mirrored.'
+      question: "タングラムのピースは反転できますか？",
+      answer: "反転できるのはピンクの平行四辺形だけです。選択してFキー、または反転ボタンを押してください。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

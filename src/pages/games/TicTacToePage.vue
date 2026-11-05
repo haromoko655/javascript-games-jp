@@ -12,19 +12,19 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="controls">
         <select id="difficulty">
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
+          <option value="easy">初級</option>
+          <option value="medium">中級</option>
+          <option value="hard">上級</option>
         </select>
         <select id="gridSize">
-          <option value="3">3x3</option>
-          <option value="4">4x4</option>
-          <option value="5">5x5</option>
+          <option value="3">3×3</option>
+          <option value="4">4×4</option>
+          <option value="5">5×5</option>
         </select>
-        <button onclick="startNewGame()">New Game</button>
+        <button onclick="startNewGame()">新しいゲーム</button>
       </div>
       <div id="gameBoard" class="game-board"></div>
       <div id="status" class="status"></div>
@@ -33,8 +33,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -53,29 +53,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'tic-tac-toe',
-  title: 'Tic Tac Toe Online - Play Against AI',
-  shortTitle: 'Tic Tac Toe',
-  description: 'Play Tic Tac Toe online against AI with adjustable difficulty. Choose 3x3, 4x4, or 5x5 grid sizes. Classic X and O game for all ages.',
+  title: '○×ゲーム - コンピューター対戦',
+  shortTitle: '○×ゲーム',
+  description: 'コンピューターと対戦する○×ゲームです。3×3、4×4、5×5の盤面と難易度を選べます。',
   metaDescription: 'Play free Tic Tac Toe online against computer AI. Multiple grid sizes (3x3, 4x4, 5x5) and difficulty levels. Classic noughts and crosses game.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Strategy Games', 'Classic Games'],
+  categories: ['パズル', '戦略', '定番'],
   keywords: ['tic tac toe', 'noughts and crosses', 'x and o game', 'tic tac toe online', 'play tic tac toe'],
   initCode: 'startNewGame();',
   faqs: [
     {
-      question: 'How do you win at Tic Tac Toe?',
-      answer: 'Get three (or more on larger grids) of your symbols in a row horizontally, vertically, or diagonally before your opponent does.'
+      question: "○×ゲームで勝つには？",
+      answer: "相手より先に、自分の印を横・縦・斜めのいずれかに3つ（大きな盤面ではそれ以上）並べます。"
     },
     {
-      question: 'Can you play Tic Tac Toe against computer?',
-      answer: 'Yes! This version features AI opponents with easy, medium, and hard difficulty levels.'
+      question: "コンピューターと対戦できますか？",
+      answer: "はい。初級・中級・上級のコンピューターと対戦できます。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

@@ -12,17 +12,17 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="sudoku">
         <div class="difficulty-controls">
-          <button class="difficulty easy selected" onclick="setDifficulty('easy')">Easy</button>
-          <button class="difficulty medium" onclick="setDifficulty('medium')">Medium</button>
-          <button class="difficulty hard" onclick="setDifficulty('hard')">Hard</button>
+          <button class="difficulty easy selected" onclick="setDifficulty('easy')">初級</button>
+          <button class="difficulty medium" onclick="setDifficulty('medium')">中級</button>
+          <button class="difficulty hard" onclick="setDifficulty('hard')">上級</button>
         </div>
         <div class="timer" id="timer">00:00</div>
         <div class="controls">
-          <button onclick="newGame()">New Game</button>
-          <button onclick="hint()">Get Hint</button>
+          <button onclick="newGame()">新しいゲーム</button>
+          <button onclick="hint()">ヒント</button>
         </div>
         <div class="grid" id="grid"></div>
         <div class="message" id="message"></div>
@@ -32,8 +32,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -52,33 +52,33 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'sudoku',
-  title: 'Play Sudoku Online Free',
-  shortTitle: 'Sudoku',
-  description: 'Play classic Sudoku puzzles online for free. Fill the 9x9 grid so each row, column, and 3x3 box contains digits 1-9. Multiple difficulty levels from easy to hard.',
+  title: '無料オンライン数独',
+  shortTitle: '数独',
+  description: '無料で遊べる定番の数独です。各行・各列・3×3のブロックに1から9までの数字を一度ずつ入れましょう。難易度を選べます。',
   metaDescription: 'Play free online Sudoku puzzles with easy, medium, and hard difficulty levels. Train your brain with this classic number placement game. No download required.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Logic Games', 'Number Games'],
+  categories: ['パズル', '論理', '数字'],
   keywords: ['sudoku online', 'free sudoku', 'sudoku puzzle', 'number puzzle', 'brain games'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'How do you play Sudoku?',
-      answer: 'Fill the 9x9 grid so that each row, column, and 3x3 box contains the numbers 1-9 exactly once. Start with the given numbers and use logic to fill in the rest.'
+      question: "数独はどう遊びますか？",
+      answer: "9×9の盤面を埋め、各行・各列・3×3ブロックに1から9までの数字を一度ずつ入れます。最初から入っている数字を手がかりに推理しましょう。"
     },
     {
-      question: 'What are the rules of Sudoku?',
-      answer: 'Each row must contain numbers 1-9 without repetition. Each column must contain numbers 1-9 without repetition. Each 3x3 box must contain numbers 1-9 without repetition.'
+      question: "数独のルールは？",
+      answer: "各行、各列、各3×3ブロックに1から9までの数字を重複なく入れます。"
     },
     {
-      question: 'Is Sudoku good for your brain?',
-      answer: 'Yes! Sudoku improves logical thinking, memory, and concentration. Regular play can help keep your mind sharp and may reduce cognitive decline.'
+      question: "数独は脳トレになりますか？",
+      answer: "はい。論理的思考、記憶力、集中力を使います。定期的に遊ぶと頭を働かせる練習になります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

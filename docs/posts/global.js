@@ -25,7 +25,7 @@ const GamePopup = {
         document.body.appendChild(this.popup);
     },
 
-    show({ title, message = '', buttons = [{ text: 'Play Again', onClick: null }], showConfetti = false }) {
+    show({ title, message = '', buttons = [{ text: 'もう一度遊ぶ', onClick: null }], showConfetti = false }) {
         this.init();
 
         if (showConfetti) {

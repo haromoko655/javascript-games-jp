@@ -12,26 +12,26 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="container">
         <div class="level-select">
-          <button onclick="setLevel(4)">4x4</button>
-          <button onclick="setLevel(5)">5x5</button>
-          <button onclick="setLevel(6)">6x6</button>
-          <button onclick="setLevel(8)">8x8</button>
-          <button onclick="setLevel(9)">9x9</button>
-          <button onclick="setLevel(10)">10x10</button>
-          <button onclick="setLevel(11)">11x11</button>
-          <button onclick="setLevel(12)">12x12</button>
+          <button onclick="setLevel(4)">4×4</button>
+          <button onclick="setLevel(5)">5×5</button>
+          <button onclick="setLevel(6)">6×6</button>
+          <button onclick="setLevel(8)">8×8</button>
+          <button onclick="setLevel(9)">9×9</button>
+          <button onclick="setLevel(10)">10×10</button>
+          <button onclick="setLevel(11)">11×11</button>
+          <button onclick="setLevel(12)">12×12</button>
         </div>
 
         <div class="queen-count" id="queenCount"></div>
         <div class="board" id="board"></div>
 
         <div class="controls">
-          <button onclick="getHint()">Get Hint</button>
-          <button onclick="checkSolution()">Check Solution</button>
-          <button onclick="resetPuzzle()">Reset</button>
+          <button onclick="getHint()">ヒント</button>
+          <button onclick="checkSolution()">答え合わせ</button>
+          <button onclick="resetPuzzle()">リセット</button>
         </div>
 
         <div class="status" id="status"></div>
@@ -41,8 +41,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -61,29 +61,29 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'n-queens',
-  title: 'N-Queens Puzzle - Chess Logic Game',
-  shortTitle: 'N-Queens',
-  description: 'Place N queens on an NxN chessboard so no two queens threaten each other. Classic chess puzzle from 4x4 to 12x12.',
+  title: 'Nクイーン - チェスの論理パズル',
+  shortTitle: 'Nクイーン',
+  description: 'N×Nの盤面に、互いに取られないようN個のクイーンを配置しましょう。4×4から12×12まで挑戦できます。',
   metaDescription: 'Play the N-Queens puzzle online. Place queens on a chessboard without them threatening each other. Classic computer science puzzle game.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Chess', 'Logic Games'],
+  categories: ['パズル', 'チェス', '論理'],
   keywords: ['n queens', 'eight queens', 'chess puzzle', 'queen placement', 'logic puzzle'],
   initCode: 'initializePuzzle();',
   faqs: [
     {
-      question: 'What is the N-Queens puzzle?',
-      answer: 'Place N queens on an NxN chessboard so no two queens can attack each other. Queens attack horizontally, vertically, and diagonally.'
+      question: "Nクイーン問題とは何ですか？",
+      answer: "N×Nのチェス盤にN個のクイーンを置き、どの2つも互いに取り合わないようにするパズルです。クイーンは縦・横・斜めに動けます。"
     },
     {
-      question: 'How many solutions does the 8 Queens puzzle have?',
-      answer: 'The 8 Queens puzzle has 92 distinct solutions, or 12 fundamental solutions when accounting for symmetry.'
+      question: "8クイーン問題には何通りの解がありますか？",
+      answer: "対称形を別々に数えると、異なる解は92通りです。対称性をまとめると、基本形は12通りです。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

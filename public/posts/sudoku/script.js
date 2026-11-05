@@ -74,7 +74,7 @@ function updateTimer() {
 
 function hint() {
     if (hintsRemaining <= 0) {
-        document.getElementById('message').textContent = 'No hints remaining!';
+        document.getElementById('message').textContent = 'ヒントは残っていません！';
         return;
     }
 
@@ -91,7 +91,7 @@ function hint() {
     }
 
     if (emptyPositions.length === 0) {
-        document.getElementById('message').textContent = 'No empty cells to fill!';
+        document.getElementById('message').textContent = '入力する空欄がありません！';
         return;
     }
 
@@ -231,8 +231,8 @@ function checkSolution() {
         clearInterval(timerInterval);
         const timeStr = document.getElementById('timer').textContent;
         GamePopup.show({
-            title: 'Congratulations!',
-            message: `You solved the ${currentDifficulty} puzzle in ${timeStr}!`,
+            title: 'クリアおめでとう！',
+            message: `${currentDifficulty}の問題を${timeStr}で解きました！`,
             showConfetti: true
         });
     }

@@ -12,28 +12,28 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div id="game_main_container" class="game-container">
         <div class="controls">
-          <button onclick="newGame()">New Game</button>
-          <button onclick="addCards()">Add Cards (+3)</button>
-          <button onclick="showHint()">Hint</button>
+          <button onclick="newGame()">新しいゲーム</button>
+          <button onclick="addCards()">カードを追加（+3）</button>
+          <button onclick="showHint()">ヒント</button>
         </div>
         <div class="stats">
           <div class="stat-item">
-            <span class="stat-label">Sets Found: </span>
+            <span class="stat-label">見つけたセット： </span>
             <span class="stat-value" id="setsFound">0</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Time: </span>
+            <span class="stat-label">時間： </span>
             <span class="stat-value" id="timer">00:00</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Cards Left: </span>
+            <span class="stat-label">残りカード： </span>
             <span class="stat-value" id="cardsLeft">0</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Sets Available: </span>
+            <span class="stat-label">見つかるセット： </span>
             <span class="stat-value" id="setsAvailable">0</span>
           </div>
         </div>
@@ -42,28 +42,28 @@
     </section>
 
     <div class="instructions">
-      <h2>How to Play</h2>
+      <h2>遊び方</h2>
       <ol>
-        <li>Find three cards that form a valid <strong>Set</strong></li>
-        <li>A valid set has cards where each feature (shape, color, fill, count) is either <strong>all the same</strong> or <strong>all different</strong> across the three cards</li>
-        <li>Click three cards to select them - if they form a valid set, they'll be replaced with new cards</li>
-        <li>If no sets are available, click "Add Cards" to add 3 more cards to the board</li>
-        <li>Use "Hint" if you're stuck - it will briefly highlight a valid set</li>
+        <li>条件に合う3枚のカードを見つけます： <strong>セット</strong></li>
+        <li>カード3枚の形・色・塗り・数の各特徴が <strong>すべて同じ</strong>または<strong>すべて異なる</strong>、3枚すべてで成り立つ必要があります</li>
+        <li>カードを3枚選びます。正しいセットなら新しいカードに入れ替わります</li>
+        <li>セットが見つからない場合は「カードを追加」を押し、カードを3枚増やします</li>
+        <li>困ったときは「ヒント」を押すと、正しいセットが一時的に強調表示されます</li>
       </ol>
-      <p><strong>Features:</strong></p>
+      <p><strong>カードの特徴：</strong></p>
       <ul>
-        <li><strong>Shapes:</strong> Diamond, Oval, Squiggle</li>
-        <li><strong>Colors:</strong> Red, Green, Purple</li>
-        <li><strong>Fills:</strong> Solid, Striped, Empty</li>
-        <li><strong>Counts:</strong> 1, 2, or 3 shapes</li>
+        <li><strong>形：</strong> ダイヤ、楕円、波形</li>
+        <li><strong>色：</strong> 赤、緑、紫</li>
+        <li><strong>塗り：</strong> 塗りつぶし、縞模様、空白</li>
+        <li><strong>枚数：</strong> 1個、2個、または3個</li>
       </ul>
     </div>
 
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -82,37 +82,37 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'set-game',
-  title: 'Set Game - Find Matching Card Sets',
-  shortTitle: 'Set Game',
-  description: 'Find sets of three cards where each feature is either all the same or all different. A challenging visual logic puzzle that trains pattern recognition.',
+  title: 'セット - カードの組み合わせ探し',
+  shortTitle: 'セット',
+  description: '各特徴がすべて同じか、すべて異なるカード3枚の組み合わせを探しましょう。パターン認識を鍛えるパズルです。',
   metaDescription: 'Play Set Game online free. Find valid sets of three cards based on shape, color, fill, and count. A classic pattern recognition puzzle that challenges your brain.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Logic Games', 'Pattern Games'],
+  categories: ['パズル', '論理', '図形'],
   keywords: ['set game', 'card game', 'pattern recognition', 'logic puzzle', 'brain game', 'visual puzzle', 'matching game'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'What is a valid Set in the Set Game?',
-      answer: 'A valid Set consists of three cards where each of the four features (shape, color, fill, and count) is either all the same or all different across the three cards. For example, three cards with different shapes, different colors, different fills, and the same count would be a valid set.'
+      question: "セットゲームで有効なセットとは？",
+      answer: "カード3枚の形・色・塗り・数の4つの特徴それぞれが、すべて同じか、すべて異なる組み合わせです。たとえば形・色・塗りがすべて異なり、数だけ同じカード3枚は有効なセットです。"
     },
     {
-      question: 'What are the four features in Set?',
-      answer: 'Each card has four features: Shape (diamond, oval, or squiggle), Color (red, green, or purple), Fill (solid, striped, or empty), and Count (1, 2, or 3 shapes). With 3 options for each of 4 features, there are 81 unique cards in the deck.'
+      question: "セットのカードにはどんな特徴がありますか？",
+      answer: "各カードには形（ダイヤ・楕円・波形）、色（赤・緑・紫）、塗り（塗りつぶし・縞模様・空白）、数（1〜3個）の4つの特徴があります。各特徴に3通りあるため、カードは全部で81種類です。"
     },
     {
-      question: 'How do I get better at finding Sets?',
-      answer: 'Start by focusing on one feature at a time. Look for cards that share two features and check if a third card completes the set. Practice recognizing common patterns and train yourself to quickly scan all four features. The more you play, the faster you\'ll spot valid sets.'
+      question: "セットを見つけるコツは？",
+      answer: "まず一つの特徴に注目します。二つの特徴が同じカードを見つけ、3枚目でセットになるか確かめましょう。4つの特徴を素早く見比べる練習をすると、見つけやすくなります。"
     },
     {
-      question: 'What if there are no valid Sets on the board?',
-      answer: 'If no valid sets exist among the displayed cards, click the "Add Cards" button to add 3 more cards to the board. The game automatically ensures there\'s at least one valid set when starting, but as you find sets, situations with no valid sets can occur.'
+      question: "盤面にセットがない場合は？",
+      answer: "表示中のカードに有効なセットがない場合は、「カードを追加」を押して3枚増やしてください。ゲーム開始時には必ずセットがありますが、セットを見つけるうちに盤面からなくなることがあります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

@@ -12,21 +12,21 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="game-container">
         <div class="controls">
           <select id="levelSelect" class="level-select" onchange="changeLevel()">
-            <option value="1">Easy (3x4)</option>
-            <option value="2">Medium (4x4)</option>
-            <option value="3">Hard (4x5)</option>
-            <option value="4">Expert (5x6)</option>
+            <option value="1">初級（3×4）</option>
+            <option value="2">中級（4×4）</option>
+            <option value="3">上級（4×5）</option>
+            <option value="4">エキスパート（5×6）</option>
           </select>
-          <button onclick="newGame()">New Game</button>
+          <button onclick="newGame()">新しいゲーム</button>
         </div>
         <div class="stats">
-          <div>Moves: <span id="moveCount">0</span></div>
-          <div>Time: <span id="timer">00:00</span></div>
-          <div>Best: <span id="bestScore">-</span></div>
+          <div>手数： <span id="moveCount">0</span></div>
+          <div>時間： <span id="timer">00:00</span></div>
+          <div>ベスト： <span id="bestScore">-</span></div>
         </div>
         <div id="winner" class="winner"></div>
         <div class="board"></div>
@@ -36,8 +36,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -56,33 +56,33 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'memory-match',
-  title: 'Memory Match Game - Card Matching Puzzle',
-  shortTitle: 'Memory Match',
-  description: 'Flip cards to find matching pairs. Train your memory with this classic concentration game. Multiple grid sizes from easy to challenging.',
+  title: '神経衰弱 - カード合わせ',
+  shortTitle: '神経衰弱',
+  description: 'カードをめくって同じ絵柄のペアを見つけましょう。盤面サイズを選んで記憶力に挑戦できます。',
   metaDescription: 'Play Memory Match online free. Flip cards to find matching pairs in this classic concentration game. 4 difficulty levels to challenge your memory skills.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Memory Games', 'Classic Games'],
+  categories: ['パズル', '記憶', '定番'],
   keywords: ['memory game', 'matching game', 'concentration game', 'card matching', 'memory training', 'brain game'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'How do you play Memory Match?',
-      answer: 'Click on cards to flip them over and reveal the icons. Try to find two cards with matching icons. When you find a match, both cards stay face up. Continue until all pairs are matched.'
+      question: "神経衰弱はどう遊びますか？",
+      answer: "カードをクリックしてめくり、絵柄を確認します。同じ絵柄の2枚を見つけると、そのカードは表向きのままになります。すべてのペアを見つけましょう。"
     },
     {
-      question: 'What are good strategies for memory games?',
-      answer: 'Start by flipping cards in a systematic pattern to build a mental map of their locations. Pay attention to every card that gets flipped, even when looking for other matches. Try to remember cards by their position relative to other cards.'
+      question: "神経衰弱のコツはありますか？",
+      answer: "カードを順番にめくって位置を覚えましょう。ペア探し以外でめくったカードもよく見て、場所を記憶しておくことが大切です。"
     },
     {
-      question: 'How does Memory Match help train your brain?',
-      answer: 'Memory matching games improve short-term memory, concentration, and visual recognition skills. Regular practice can enhance your ability to remember and recall information quickly.'
+      question: "神経衰弱でどんな力を使いますか？",
+      answer: "短期記憶、集中力、視覚的な認識力を使います。繰り返し遊ぶことで、情報を覚えて思い出す練習になります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

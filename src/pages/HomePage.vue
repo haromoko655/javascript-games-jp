@@ -2,15 +2,15 @@
   <article class="container py-4">
     <!-- Hero Section -->
     <header class="mb-5">
-      <h1 class="page-title mb-3">Brain Training Games</h1>
+      <h1 class="page-title mb-3">脳トレゲーム</h1>
       <p class="page-subtitle">
-        Free puzzle games. No downloads. Play in your browser.
+        無料で遊べるパズルゲーム。ダウンロード不要、ブラウザーですぐにプレイ。
       </p>
     </header>
 
     <!-- Game Categories -->
     <section aria-labelledby="games-heading">
-      <h2 id="games-heading" class="visually-hidden">All Games</h2>
+      <h2 id="games-heading" class="visually-hidden">ゲーム一覧</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <div v-for="(game, index) in games" :key="game.slug" class="col">
           <GameCard :game="game" :priority="index < 3" />
@@ -20,20 +20,20 @@
 
     <!-- SEO Content Section -->
     <section class="mt-5 pt-4 border-top" aria-labelledby="about-games-heading">
-      <h2 id="about-games-heading" class="section-title mb-3">About</h2>
+      <h2 id="about-games-heading" class="section-title mb-3">このサイトについて</h2>
       <div class="row">
         <div class="col-md-6">
-          <h3 class="subsection-title">Why Play Puzzle Games?</h3>
+          <h3 class="subsection-title">パズルゲームで遊ぶ楽しさ</h3>
           <p class="body-text">
-            Puzzle games improve logical thinking, memory, and concentration.
-            From Sudoku to the Knight's Tour, all skill levels welcome.
+            パズルゲームで論理的思考力や記憶力、集中力を使ってみましょう。
+            数独からナイトツアーまで、初心者から上級者まで楽しめます。
           </p>
         </div>
         <div class="col-md-6">
-          <h3 class="subsection-title">Play Anywhere</h3>
+          <h3 class="subsection-title">いつでもどこでも</h3>
           <p class="body-text">
-            All games work directly in your browser.
-            No downloads, no registration. Just play.
+            すべてのゲームはブラウザー上で遊べます。
+            ダウンロードも登録も不要です。
           </p>
         </div>
       </div>
@@ -41,7 +41,7 @@
 
     <!-- FAQ Section for SEO -->
     <section class="mt-5 pt-4 border-top" aria-labelledby="faq-heading">
-      <h2 id="faq-heading" class="section-title mb-4">FAQ</h2>
+      <h2 id="faq-heading" class="section-title mb-4">よくある質問</h2>
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item" v-for="(faq, index) in faqs" :key="index">
           <h3 class="accordion-header">
@@ -75,26 +75,26 @@ import GameCard from '../components/GameCard.vue'
 // Homepage FAQs - defined before useHead to avoid reference error
 const faqs = [
   {
-    question: 'Are these games free to play?',
-    answer: 'Yes! All the games are completely free to play. No downloads, no registration, and no hidden costs. Just open your browser and start playing.'
+    question: 'ゲームは無料で遊べますか？',
+    answer: 'はい、すべて無料です。ダウンロードや会員登録、追加料金は必要ありません。ブラウザーを開いてすぐに遊べます。'
   },
   {
-    question: 'Do I need to download anything?',
-    answer: 'No downloads required. All games run directly in your web browser using JavaScript. They work on desktop computers, tablets, and mobile phones.'
+    question: '何かをダウンロードする必要はありますか？',
+    answer: 'ダウンロードは不要です。ゲームはJavaScriptを使ってブラウザー上で動作し、パソコン、タブレット、スマートフォンで遊べます。'
   },
   {
-    question: 'Are puzzle games good for your brain?',
-    answer: 'Research shows that puzzle games can improve cognitive function, including memory, concentration, and problem-solving skills. Regular play may help maintain mental sharpness as you age.'
+    question: 'パズルゲームは脳トレになりますか？',
+    answer: 'パズルゲームでは記憶力や集中力、問題解決力を使います。楽しみながら頭を働かせるきっかけになります。'
   },
   {
-    question: 'Which game should I start with?',
-    answer: 'If you are new to puzzle games, start with classics like Tic Tac Toe or Minesweeper. For more challenge, try Sudoku or Connect 4. The N-Queens and Knight\'s Tour are great for advanced players.'
+    question: 'どのゲームから始めるのがおすすめですか？',
+    answer: '初めてなら○×ゲームやマインスイーパーがおすすめです。慣れてきたら数独や四目並べに挑戦してみてください。上級者にはNクイーンやナイトツアーもあります。'
   }
 ]
 
 // SEO Head configuration
 useHead({
-  title: 'Brain Busters - Free Online Puzzle Games | Sudoku, Minesweeper & More',
+  title: 'Brain Busters 日本語版 - 無料のオンライン脳トレ・パズルゲーム',
   meta: [
     { name: 'description', content: siteData.description },
     { name: 'keywords', content: 'puzzle games, brain games, sudoku, minesweeper, tic tac toe, connect 4, word search, logic games, free online games' },

@@ -74,7 +74,7 @@ function addToSequence() {
 async function playSequence() {
     isPlaying = true;
     isPlayerTurn = false;
-    updateStatus('Watch the sequence...');
+    updateStatus('光る順番を見てください…');
     disableButtons();
 
     await sleep(500);
@@ -90,7 +90,7 @@ async function playSequence() {
     isPlayerTurn = true;
     playerIndex = 0;
     enableButtons();
-    updateStatus('Your turn! Repeat the sequence');
+    updateStatus('あなたの番です！同じ順番で押してください');
 }
 
 function handleColorClick(color) {
@@ -107,7 +107,7 @@ function handleColorClick(color) {
             score++;
             updateScore();
             isPlayerTurn = false;
-            updateStatus('Correct! Get ready...');
+            updateStatus('正解です！準備してください…');
 
             setTimeout(() => {
                 addToSequence();
@@ -129,7 +129,7 @@ function gameOver() {
         updateHighScore();
     }
 
-    updateStatus(`Game Over! You reached round ${score}`);
+    updateStatus(`ゲームオーバー！${score}ラウンドまで進みました`);
     document.getElementById('startBtn').style.display = 'inline-block';
 
     // Flash all buttons to indicate game over
@@ -179,10 +179,10 @@ function toggleStrict() {
     const btn = document.getElementById('strictBtn');
     if (strictMode) {
         btn.classList.add('active');
-        btn.textContent = 'Strict: ON';
+        btn.textContent = '厳格モード：オン';
     } else {
         btn.classList.remove('active');
-        btn.textContent = 'Strict: OFF';
+        btn.textContent = '厳格モード：オフ';
     }
 }
 

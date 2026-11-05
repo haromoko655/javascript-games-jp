@@ -12,36 +12,36 @@
       </div>
     </header>
 
-    <section id="game_main_container" class="game-section" aria-label="Game Area">
+    <section id="game_main_container" class="game-section" aria-label="ゲームエリア">
       <div class="game-controls">
-        <label for="boardSizeSelect">Board Size:</label>
+        <label for="boardSizeSelect">盤面サイズ：</label>
         <select id="boardSizeSelect" onchange="changeBoardSize()">
-          <option value="5">5x5</option>
-          <option value="7" selected>7x7</option>
-          <option value="9">9x9</option>
-          <option value="11">11x11</option>
+          <option value="5">5×5</option>
+          <option value="7" selected>7×7</option>
+          <option value="9">9×9</option>
+          <option value="11">11×11</option>
         </select>
 
-        <label for="difficultySelect">Difficulty:</label>
+        <label for="difficultySelect">難易度：</label>
         <select id="difficultySelect" onchange="changeDifficulty()">
-          <option value="easy">Easy</option>
-          <option value="medium" selected>Medium</option>
-          <option value="hard">Hard</option>
+          <option value="easy">初級</option>
+          <option value="medium" selected>中級</option>
+          <option value="hard">上級</option>
         </select>
 
-        <button class="new-game-btn" onclick="newGame()">New Game</button>
+        <button class="new-game-btn" onclick="newGame()">新しいゲーム</button>
       </div>
 
-      <div id="gameStatus">Your turn - Click a cell to place your piece</div>
+      <div id="gameStatus">あなたの番です - マスをクリックしてコマを置いてください</div>
 
       <div class="game-info">
         <div class="player-info">
           <div class="player-indicator blue"></div>
-          <span class="player-label">You (Blue) - Connect Top to Bottom</span>
+          <span class="player-label">あなた（青）：上辺と下辺をつなぐ</span>
         </div>
         <div class="player-info">
           <div class="player-indicator red"></div>
-          <span class="player-label">AI (Red) - Connect Left to Right</span>
+          <span class="player-label">コンピューター（赤）：左辺と右辺をつなぐ</span>
         </div>
       </div>
 
@@ -50,13 +50,13 @@
       </div>
 
       <div class="instructions-box">
-        <h3>How to Play Hex</h3>
+        <h3>ヘックスの遊び方</h3>
         <ul>
-          <li><span class="goal-indicator"><span class="color-box blue"></span> Blue (You)</span>: Connect the top edge to the bottom edge</li>
-          <li><span class="goal-indicator"><span class="color-box red"></span> Red (AI)</span>: Connect the left edge to the right edge</li>
-          <li>Take turns placing one piece on any empty cell</li>
-          <li>First player to create a connected path between their two sides wins</li>
-          <li>There are no draws in Hex - someone always wins!</li>
+          <li><span class="goal-indicator"><span class="color-box blue"></span> 青（あなた）</span>: 上辺と下辺をつなぎます</li>
+          <li><span class="goal-indicator"><span class="color-box red"></span> 赤（相手）</span>: 左辺と右辺をつなぎます</li>
+          <li>交互に空いているマスへコマを1つ置きます</li>
+          <li>自分の両端を先につないだ人の勝ちです</li>
+          <li>引き分けはなく、必ず勝敗が決まります</li>
         </ul>
       </div>
     </section>
@@ -64,8 +64,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -84,37 +84,37 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'hex',
-  title: 'Hex Game - Connection Strategy Puzzle',
-  shortTitle: 'Hex',
-  description: 'Play Hex against AI. Connect your sides of the board before your opponent. A classic connection strategy game with simple rules but deep tactics.',
+  title: 'ヘックス - 接続戦略パズル',
+  shortTitle: 'ヘックス',
+  description: 'コンピューターとヘックスで対戦しましょう。相手より先に盤面の自分側の辺同士をつなぐ戦略ゲームです。',
   metaDescription: 'Play Hex online free against AI. Connect your edges of the hexagonal board before your opponent. Classic strategy game invented by mathematicians with multiple board sizes.',
   thumbnail: 'thumbnail.png',
-  categories: ['Strategy Games', 'Logic Games', 'Classic Games'],
+  categories: ['戦略', '論理', '定番'],
   keywords: ['hex game', 'hex board game', 'connection game', 'strategy game', 'hexagonal game', 'Nash game', 'two player game', 'abstract strategy'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'What is the Hex game and how do you play?',
-      answer: 'Hex is a two-player abstract strategy game played on a diamond-shaped hexagonal grid. One player (Blue) tries to connect the top edge to the bottom edge, while the other player (Red) tries to connect the left edge to the right edge. Players take turns placing one piece on any empty cell. The first player to create a connected path between their two sides wins. The game was invented independently by mathematician Piet Hein in 1942 and John Nash in 1948.'
+      question: "ヘックスはどう遊びますか？",
+      answer: "ひし形の六角形盤を使う2人用の戦略ゲームです。青は上辺と下辺、赤は左辺と右辺を先につなぐことを目指します。交互に空きマスへコマを置き、自分の両端をつないだ人が勝ちです。"
     },
     {
-      question: 'Is there always a winner in Hex?',
-      answer: 'Yes! Unlike many strategy games, Hex cannot end in a draw. This is because the board can only be completely filled when one player has formed a winning connection. Mathematically, this is known as the "Hex theorem" - when the board is full, exactly one player must have a winning path.'
+      question: "ヘックスに引き分けはありますか？",
+      answer: "ありません。盤面が埋まると、どちらか一方が必ず自分の両端をつなぎます。これは「ヘックスの定理」として知られています。"
     },
     {
-      question: 'What is a good strategy for Hex?',
-      answer: 'Key strategies include: 1) Control the center of the board, as central positions connect to more cells. 2) Create "bridges" - pairs of cells that can be connected on your next turn regardless of your opponent\'s move. 3) Think ahead and visualize possible paths. 4) Block your opponent while building your own connection. The first player has a theoretical advantage, which is why the "swap rule" is sometimes used in competitive play.'
+      question: "ヘックスのコツは何ですか？",
+      answer: "中央を押さえると多くのマスへつながりやすくなります。相手の手にかかわらず接続できる橋を作り、自分の道を伸ばしながら相手の道を防ぎましょう。"
     },
     {
-      question: 'What do the different difficulty levels mean?',
-      answer: 'Easy: AI makes random moves. Medium: AI uses simple heuristics like preferring center positions and building connections. Hard: AI evaluates board positions more deeply, looking for winning moves and blocking opportunities. Larger board sizes (9x9, 11x11) provide more complex strategic depth.'
+      question: "難易度の違いは何ですか？",
+      answer: "初級はランダムに手を選びます。中級は中央や接続を意識します。上級は盤面を深く読み、勝ちにつながる手や相手を止める手を探します。大きな盤面ほど複雑になります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

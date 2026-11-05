@@ -27,7 +27,7 @@ function initializeGame() {
         gameBoard.appendChild(cell);
     }
 
-    updateStatus(`Player ${currentPlayer}'s turn`);
+    updateStatus(`プレイヤー${currentPlayer}の番です`);
 }
 
 function handleCellClick(index) {
@@ -37,7 +37,7 @@ function handleCellClick(index) {
 
     if (gameActive) {
         currentPlayer = 'O';
-        updateStatus('Computer is thinking...');
+        updateStatus('コンピューターが考えています…');
         setTimeout(computerMove, 500);
     }
 }
@@ -50,14 +50,14 @@ function makeMove(index) {
         gameActive = false;
         if (currentPlayer === 'X') {
             GamePopup.show({
-                title: 'Congratulations!',
-                message: 'You win!',
+                title: 'クリアおめでとう！',
+                message: 'あなたの勝ちです！',
                 showConfetti: true
             });
         } else {
             GamePopup.show({
-                title: 'Better luck next time!',
-                message: 'Computer wins!'
+                title: '次はがんばりましょう！',
+                message: 'コンピューターの勝ちです！'
             });
         }
         return;
@@ -66,8 +66,8 @@ function makeMove(index) {
     if (!gameState.includes('')) {
         gameActive = false;
         GamePopup.show({
-            title: 'Tie!',
-            message: "It's a draw!"
+            title: '引き分け！',
+            message: "引き分けです！"
         });
         return;
     }
@@ -92,7 +92,7 @@ function computerMove() {
     makeMove(move);
     currentPlayer = 'X';
     if (gameActive) {
-        updateStatus(`Player ${currentPlayer}'s turn`);
+        updateStatus(`プレイヤー${currentPlayer}の番です`);
     }
 }
 

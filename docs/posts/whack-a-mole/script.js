@@ -146,7 +146,7 @@ function endGame() {
     }
 
     const message = document.getElementById('message');
-    message.textContent = `Game Over! You scored ${score} points!`;
+    message.textContent = `ゲーム終了！${score}点獲得しました！`;
     message.style.display = 'block';
     document.getElementById('startBtn').style.display = 'inline-block';
 }

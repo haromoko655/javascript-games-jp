@@ -12,11 +12,11 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="game-container">
         <div class="stats">
-          <div>Round: <span id="score">0</span></div>
-          <div>Best: <span id="highScore">0</span></div>
+          <div>ラウンド： <span id="score">0</span></div>
+          <div>ベスト： <span id="highScore">0</span></div>
         </div>
 
         <div class="simon-board">
@@ -29,10 +29,10 @@
           </div>
         </div>
 
-        <div id="status" class="status">Press Start to begin!</div>
+        <div id="status" class="status">スタートを押して開始！</div>
 
         <div class="controls">
-          <button id="startBtn" onclick="startGame()">Start Game</button>
+          <button id="startBtn" onclick="startGame()">ゲーム開始</button>
         </div>
 
         <p class="instructions">
@@ -44,8 +44,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -64,33 +64,33 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'simon-says',
-  title: 'Simon Says Game - Memory Sequence Game',
-  shortTitle: 'Simon Says',
-  description: 'Watch the color sequence and repeat it back. Each round adds one more color. How long can you keep up? Classic memory game with sound.',
+  title: 'サイモン - 順番記憶ゲーム',
+  shortTitle: 'サイモン',
+  description: '光る色の順番を覚えて同じように押しましょう。ラウンドごとに色が一つ増えていきます。音付きの記憶ゲームです。',
   metaDescription: 'Play Simon Says online free. Watch and repeat the growing sequence of colors and sounds. Test your memory with this classic electronic game.',
   thumbnail: 'thumbnail.png',
-  categories: ['Memory Games', 'Classic Games', 'Challenge'],
+  categories: ['記憶', '定番', 'チャレンジ'],
   keywords: ['simon says', 'memory game', 'sequence game', 'pattern memory', 'color game', 'brain training'],
   initCode: '',
   faqs: [
     {
-      question: 'How do you play Simon Says?',
-      answer: 'Watch the colored buttons light up in a sequence, then repeat that sequence by clicking the buttons in the same order. Each round adds one more color to the sequence. The game ends when you make a mistake.'
+      question: "サイモンはどう遊びますか？",
+      answer: "光るボタンの順番を見て、同じ順番で押します。ラウンドごとに色が一つ増え、間違えるとゲーム終了です。"
     },
     {
-      question: 'What is the world record for Simon Says?',
-      answer: 'While records vary by version, expert players can often remember sequences of 30+ colors. The key is to develop memory techniques like chunking colors into groups or creating patterns.'
+      question: "サイモンの記録はどのくらいですか？",
+      answer: "記録はバージョンによって異なりますが、熟練者は30色以上の並びを覚えることがあります。色をグループに分けたり、パターンとして覚えたりすると役立ちます。"
     },
     {
-      question: 'How can I improve at Simon Says?',
-      answer: 'Try associating each color with a word or phrase. Group colors into chunks of 3-4. Some players find it helpful to say the colors out loud or tap a rhythm. Regular practice builds your working memory capacity.'
+      question: "サイモンが上達するコツは？",
+      answer: "色に言葉を当てたり、3〜4色ずつのまとまりで覚えたりしてみましょう。声に出したりリズムを取ったりする方法もあります。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

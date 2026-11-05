@@ -141,13 +141,13 @@ function checkSolution() {
 
     if (isValid) {
         GamePopup.show({
-            title: 'Congratulations!',
-            message: 'You solved the N-Queens puzzle!',
+            title: 'クリアおめでとう！',
+            message: 'Nクイーンのパズルを解きました！',
             showConfetti: true
         });
     } else {
         document.getElementById('status').textContent =
-            'Some queens are threatening each other. Try again!';
+            'クイーン同士が攻撃し合っています。配置をやり直してください。';
     }
 }
 
@@ -155,7 +155,7 @@ function checkSolution() {
 function getHint() {
     if (queens.size >= size) {
         document.getElementById('status').textContent =
-            'Remove some queens to get a hint';
+            'ヒントを見るにはクイーンをいくつか取り除いてください';
         return;
     }
 

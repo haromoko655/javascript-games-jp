@@ -144,7 +144,7 @@ function revealCell(row, col) {
     if (board[row][col].isMine) {
         gameOver = true;
         revealAllMines();
-        updateStatus('Game Over!');
+        updateStatus('ゲームオーバー！');
         return;
     }
 
@@ -186,7 +186,7 @@ function checkWinCondition() {
 
     if (revealedCells === targetRevealed && !gameOver) {
         gameOver = true;
-        updateStatus('You Won!');
+        updateStatus('クリア！');
     }
 }
 
@@ -194,7 +194,7 @@ function updateStatus(message) {
     const statusDiv = document.getElementById('status');
     const mineCountDiv = document.getElementById('mine-count');
 
-    mineCountDiv.textContent = `Mines: ${currentConfig.mines - flagsPlaced}`;
+    mineCountDiv.textContent = `地雷：${currentConfig.mines - flagsPlaced}`;
     statusDiv.textContent = message || '';
 }
 

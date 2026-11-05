@@ -123,8 +123,8 @@ function placeNumber(num) {
 
     if (checkWin()) {
         GamePopup.show({
-            title: 'Congratulations!',
-            message: 'You solved the Latin Square puzzle!',
+            title: 'クリアおめでとう！',
+            message: 'ラテン方陣を完成させました！',
             showConfetti: true
         });
     }
@@ -154,7 +154,7 @@ function getHint() {
     }
 
     if (emptyCells.length === 0) {
-        document.getElementById('status').textContent = 'No more hints needed!';
+        document.getElementById('status').textContent = 'これ以上ヒントは必要ありません！';
         return;
     }
 
@@ -179,8 +179,8 @@ function checkSolution() {
     }
 
     document.getElementById('status').textContent = isCorrect ?
-        'Perfect! All numbers are correct!' :
-        'Some numbers are incorrect. Keep trying!';
+        '完璧です！すべて正解です！' :
+        '間違いがあります。続けて挑戦しましょう！';
 }
 
 function resetPuzzle() {

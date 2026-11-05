@@ -118,7 +118,7 @@ function initGame() {
 
     updateBoard();
     document.getElementById('magic-sum').textContent = magicSum;
-    updateStatus('Game started! Fill in the numbers to make all rows, columns, and diagonals sum to ' + magicSum);
+    updateStatus('ゲーム開始！縦・横・対角線の合計が次の数になるよう数字を埋めてください：' + magicSum);
 }
 
 function updateBoard() {
@@ -161,8 +161,8 @@ function handleInput(event) {
         checkBoard();
         if (isBoardComplete() && isBoardCorrect()) {
             GamePopup.show({
-                title: 'Congratulations!',
-                message: 'You solved the magic square!',
+                title: 'クリアおめでとう！',
+                message: '魔方陣を完成させました！',
                 showConfetti: true
             });
         }
@@ -209,7 +209,7 @@ function checkBoard() {
 
 function giveHint() {
     if (hintsUsed >= 3) {
-        updateStatus('Maximum hints used!');
+        updateStatus('ヒントを使い切りました！');
         return;
     }
 
@@ -224,7 +224,7 @@ function giveHint() {
     }
 
     if (emptyCells.length === 0) {
-        updateStatus('No empty cells to give hints for!');
+        updateStatus('ヒントを出せる空欄がありません。');
         return;
     }
 
@@ -233,13 +233,13 @@ function giveHint() {
     board[randomCell.row][randomCell.col] = solution[randomCell.row][randomCell.col];
     hintsUsed++;
     updateBoard();
-    updateStatus(`Hint used! (${3 - hintsUsed} remaining)`);
+    updateStatus(`ヒントを使いました（残り${3 - hintsUsed}回）`);
 }
 
 function solve() {
     board = JSON.parse(JSON.stringify(solution));
     updateBoard();
-    updateStatus('Puzzle solved! Try solving it yourself in a new game.');
+    updateStatus('パズルを解きました！新しいゲームでは自力で挑戦してみましょう。');
 }
 
 function isBoardComplete() {

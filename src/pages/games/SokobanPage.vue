@@ -12,22 +12,22 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="sokoban" id="game_main_container">
         <div class="game-container">
-          <div id="levelName">Level 1: Tutorial</div>
+          <div id="levelName">レベル1：チュートリアル</div>
 
           <div class="controls">
             <select id="levelSelect" onchange="selectLevel()"></select>
-            <button onclick="prevLevel()" class="secondary">&lt; Prev</button>
-            <button onclick="nextLevel()" class="secondary">Next &gt;</button>
-            <button onclick="restartLevel()" class="warning">Restart</button>
-            <button onclick="undoMove()">Undo (U)</button>
+            <button onclick="prevLevel()" class="secondary">&lt; 前の面</button>
+            <button onclick="nextLevel()" class="secondary">次の面 &gt;</button>
+            <button onclick="restartLevel()" class="warning">やり直す</button>
+            <button onclick="undoMove()">一手戻す（U）</button>
           </div>
 
           <div class="stats">
-            <span>Moves: <strong id="moves">0</strong></span>
-            <span>Pushes: <strong id="pushes">0</strong></span>
+            <span>手数： <strong id="moves">0</strong></span>
+            <span>押した回数： <strong id="pushes">0</strong></span>
           </div>
 
           <canvas id="sokobanCanvas"></canvas>
@@ -44,13 +44,13 @@
           </div>
 
           <div class="instructions">
-            <h4>How to Play</h4>
+            <h4>遊び方</h4>
             <ul>
-              <li>Push all boxes (brown squares) onto the target spots (red circles)</li>
-              <li>Use <strong>Arrow Keys</strong> or <strong>WASD</strong> to move</li>
-              <li>Press <strong>U</strong> or <strong>Ctrl+Z</strong> to undo</li>
-              <li>Press <strong>R</strong> to restart the level</li>
-              <li>Boxes turn green when placed on targets</li>
+              <li>すべての箱（茶色のマス）を目的地（赤い丸）まで押します</li>
+              <li><strong>矢印キー</strong>または<strong>WASD</strong>キーで移動します</li>
+              <li><strong>U</strong>キーまたは<strong>Ctrl+Z</strong>で一手戻します</li>
+              <li><strong>R</strong>キーで面をやり直します</li>
+              <li>箱が目的地に乗ると緑色になります</li>
             </ul>
           </div>
         </div>
@@ -60,8 +60,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -80,37 +80,37 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'sokoban',
-  title: 'Sokoban - Classic Box Pushing Puzzle Game',
-  shortTitle: 'Sokoban',
-  description: 'Push boxes onto target locations in this classic Japanese puzzle game. Plan your moves carefully - once a box is pushed into a corner, it cannot be retrieved!',
-  metaDescription: 'Play Sokoban online for free. Push boxes to target spots in this classic puzzle game. 10 levels from easy to challenging. Use arrow keys or WASD to play.',
+  title: '倉庫番 - 箱押しパズル',
+  shortTitle: '倉庫番',
+  description: '箱を押してすべての目的地に運ぶ、日本生まれの定番パズルです。隅に押し込むと戻せないので、手順をよく考えましょう。',
+  metaDescription: 'Play Sokoban online for free. Push boxes to target spots in this classic puzzle game. 10 levels from easy to challenging. arrow keysまたはWASD to play.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Logic Games', 'Classic Games'],
+  categories: ['パズル', '論理', '定番'],
   keywords: ['sokoban', 'box pushing game', 'puzzle game', 'logic puzzle', 'warehouse keeper', 'sokoban online', 'free sokoban'],
   initCode: 'initSokoban();',
   faqs: [
     {
-      question: 'How do you play Sokoban?',
-      answer: 'Use arrow keys or WASD to move the player (blue circle). Push boxes (brown squares) onto the target spots (red circles). You can only push boxes, not pull them. Plan carefully because boxes pushed into corners cannot be retrieved.'
+      question: "倉庫番はどう遊びますか？",
+      answer: "矢印キーまたはWASDキーで青いプレイヤーを動かし、箱を押して目的地へ運びます。箱を引くことはできません。隅に押した箱は戻せないため、手順をよく考えましょう。"
     },
     {
-      question: 'What happens when I get stuck?',
-      answer: 'Press U or Ctrl+Z to undo your last move, or press R to restart the current level. The undo feature lets you step back through your entire history of moves.'
+      question: "行き詰まったらどうすればよいですか？",
+      answer: "UキーまたはCtrl+Zで手を戻すか、Rキーで面をやり直せます。一手戻す機能では、過去の手を順に戻せます。"
     },
     {
-      question: 'How many levels are there?',
-      answer: 'There are 10 levels ranging from a simple tutorial to challenging puzzles. Each level requires more planning and strategic thinking than the last.'
+      question: "何面ありますか？",
+      answer: "チュートリアルから難しい問題まで、全10面あります。進むにつれて計画性と戦略が必要になります。"
     },
     {
-      question: 'What does Sokoban mean?',
-      answer: 'Sokoban is Japanese for "warehouse keeper." The game was created in 1981 by Hiroyuki Imabayashi and has become one of the most popular puzzle games in the world.'
+      question: "「倉庫番」とはどういう意味ですか？",
+      answer: "「倉庫番」は箱を運ぶ人を意味します。ゲームは1981年に今林宏行氏が制作し、世界中で親しまれるパズルになりました。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

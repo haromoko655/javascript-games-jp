@@ -12,27 +12,27 @@
       </div>
     </header>
 
-    <section id="game_main_container" class="game-section" aria-label="Game Area">
+    <section id="game_main_container" class="game-section" aria-label="ゲームエリア">
       <div class="binary-puzzle">
         <div class="difficulty-controls">
-          <button class="difficulty easy selected" onclick="setDifficulty('easy')">Easy (6x6)</button>
-          <button class="difficulty medium" onclick="setDifficulty('medium')">Medium (8x8)</button>
-          <button class="difficulty hard" onclick="setDifficulty('hard')">Hard (10x10)</button>
+          <button class="difficulty easy selected" onclick="setDifficulty('easy')">初級（6×6）</button>
+          <button class="difficulty medium" onclick="setDifficulty('medium')">中級（8×8）</button>
+          <button class="difficulty hard" onclick="setDifficulty('hard')">上級（10×10）</button>
         </div>
         <div class="timer" id="timer">00:00</div>
         <div class="controls">
-          <button onclick="newGame()">New Game</button>
+          <button onclick="newGame()">新しいゲーム</button>
         </div>
         <div class="grid" id="grid"></div>
         <div class="message" id="message"></div>
         <div class="rules">
-          <h3>Rules</h3>
+          <h3>ルール</h3>
           <ul>
-            <li>Fill the grid with 0s and 1s</li>
-            <li>Each row and column must have equal numbers of 0s and 1s</li>
-            <li>No more than two consecutive 0s or 1s in any row or column</li>
-            <li>All rows must be unique, and all columns must be unique</li>
-            <li>Click a cell to cycle: empty → 0 → 1 → empty</li>
+            <li>マスを0または1で埋めます</li>
+            <li>各行・各列で0と1の数を同じにします</li>
+            <li>行・列に同じ数字が3つ連続してはいけません</li>
+            <li>各行と各列の並びはそれぞれ異なる必要があります</li>
+            <li>マスをクリックすると空欄 → 0 → 1 → 空欄の順に切り替わります</li>
           </ul>
         </div>
       </div>
@@ -41,8 +41,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -61,37 +61,37 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'binary-puzzle',
-  title: 'Binary Puzzle (Takuzu) - Logic Number Game',
-  shortTitle: 'Binary Puzzle',
-  description: 'Play Binary Puzzle (Takuzu) online for free. Fill the grid with 0s and 1s following simple rules. A challenging logic puzzle that trains your brain.',
+  title: 'バイナリパズル（タクズ）',
+  shortTitle: 'バイナリパズル',
+  description: '0と1をルールに沿ってマスに埋める無料パズルです。論理的に考えて盤面を完成させましょう。',
   metaDescription: 'Play free Binary Puzzle (Takuzu) online. Fill grids with 0s and 1s - no three consecutive same digits, equal counts per row/column, unique rows and columns. Multiple sizes available.',
   thumbnail: 'thumbnail.png',
-  categories: ['Puzzles', 'Logic Games', 'Number Games'],
+  categories: ['パズル', '論理', '数字'],
   keywords: ['binary puzzle', 'takuzu', 'binairo', '0 and 1 puzzle', 'logic puzzle', 'brain game', 'number puzzle'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'What is Binary Puzzle (Takuzu)?',
-      answer: 'Binary Puzzle, also known as Takuzu or Binairo, is a logic puzzle where you fill a grid with 0s and 1s. Each row and column must have equal numbers of both digits, no more than two consecutive same digits, and all rows and columns must be unique.'
+      question: "バイナリパズル（タクズ）とは何ですか？",
+      answer: "0と1を使う論理パズルです。各行・各列には0と1を同じ数だけ入れ、同じ数字を3つ連続させず、行や列の並びが重複しないようにします。"
     },
     {
-      question: 'How do you solve a Binary Puzzle?',
-      answer: 'Start by looking for cells where only one value is possible. If placing a 0 would create three 0s in a row, place a 1. If a row already has half its cells filled with one digit, fill the rest with the other. Use the uniqueness rule to eliminate possibilities.'
+      question: "バイナリパズルはどう解きますか？",
+      answer: "各マスに入る数字が一つに絞られる場所を探しましょう。同じ数字が3つ続いてしまう場合は、残りのマスに反対の数字を入れます。行に同じ数字が半分入ったら、残りはもう一方の数字で埋めます。"
     },
     {
-      question: 'Is Binary Puzzle good for your brain?',
-      answer: 'Yes! Binary Puzzle improves logical thinking, pattern recognition, and deductive reasoning. The simple rules but complex solutions make it an excellent brain training exercise for all ages.'
+      question: "バイナリパズルは脳トレになりますか？",
+      answer: "はい。論理的思考やパターン認識、推理力を使うため、幅広い年齢の方が楽しめる脳トレになります。"
     },
     {
-      question: 'What makes Binary Puzzle different from Sudoku?',
-      answer: 'While both are logic puzzles, Binary Puzzle uses only two symbols (0 and 1) instead of nine. The rules are different too - you must balance digit counts, avoid three in a row, and ensure uniqueness of rows and columns.'
+      question: "バイナリパズルと数独の違いは何ですか？",
+      answer: "数独は1から9までの数字を使いますが、バイナリパズルで使うのは0と1だけです。数字の数をそろえること、同じ数字を3つ続けないこと、行と列を重複させないことがルールです。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

@@ -336,8 +336,8 @@
       clearInterval(timerInterval);
       const timeStr = document.getElementById('timer').textContent;
       GamePopup.show({
-        title: 'Congratulations!',
-        message: `You solved the ${currentDifficulty} ${size}x${size} Binary Puzzle in ${timeStr}!`,
+        title: 'クリアおめでとう！',
+        message: `${currentDifficulty}の${size}×${size}バイナリパズルを${timeStr}で解きました！`,
         showConfetti: true
       });
     }

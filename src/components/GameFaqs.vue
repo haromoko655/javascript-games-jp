@@ -1,6 +1,6 @@
 <template>
   <section v-if="faqs?.length" class="mt-5 pt-4 border-top" aria-labelledby="faq-heading">
-    <h2 id="faq-heading" class="section-title mb-4">FAQ</h2>
+    <h2 id="faq-heading" class="section-title mb-4">よくある質問</h2>
     <div class="accordion" id="gameFaqAccordion">
       <div class="accordion-item" v-for="(faq, index) in faqs" :key="index">
         <h3 class="accordion-header">

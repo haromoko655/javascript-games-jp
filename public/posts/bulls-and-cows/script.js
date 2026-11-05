@@ -43,20 +43,20 @@
 
     function isValidGuess(guess) {
         if (guess.length !== digitCount) {
-            return { valid: false, message: `Enter exactly ${digitCount} digits` };
+            return { valid: false, message: `${digitCount}桁の数字を入力してください` };
         }
 
         if (!/^\d+$/.test(guess)) {
-            return { valid: false, message: 'Only digits allowed' };
+            return { valid: false, message: '数字を入力してください' };
         }
 
         if (guess[0] === '0') {
-            return { valid: false, message: 'First digit cannot be 0' };
+            return { valid: false, message: '最初の桁に0は使えません' };
         }
 
         const uniqueDigits = new Set(guess.split(''));
         if (uniqueDigits.size !== digitCount) {
-            return { valid: false, message: 'All digits must be unique' };
+            return { valid: false, message: '同じ数字は使えません' };
         }
 
         return { valid: true };
@@ -84,15 +84,15 @@
         if (result.bulls === digitCount) {
             gameOver = true;
             GamePopup.show({
-                title: 'Congratulations!',
-                message: `You guessed ${secretNumber} in ${guesses.length} tries!`,
+                title: 'クリアおめでとう！',
+                message: `${guesses.length}回で正解しました！答えは${secretNumber}です。`,
                 showConfetti: true
             });
             document.getElementById('guessInput').disabled = true;
             document.getElementById('guessBtn').disabled = true;
         } else if (guesses.length >= maxGuesses) {
             gameOver = true;
-            showMessage(`Game over! The number was ${secretNumber}`, 'error');
+            showMessage(`ゲームオーバー！正解は${secretNumber}です。`, 'error');
             document.getElementById('guessInput').disabled = true;
             document.getElementById('guessBtn').disabled = true;
         }

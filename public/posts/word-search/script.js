@@ -1,150 +1,22 @@
 (function() {
 const wordDatabase = {
-    programming: [
-        'JAVASCRIPT', 'PYTHON', 'JAVA', 'RUBY', 'PHP', 'SQL', 'REACT', 'NODE',
-        'TYPESCRIPT', 'ANGULAR', 'KOTLIN', 'SWIFT', 'RUST', 'SCALA', 'PERL',
-        'FLUTTER', 'DOCKER', 'LINUX', 'AZURE', 'GITHUB', 'REDUX', 'VUE',
-        'MONGODB', 'POSTGRES', 'DJANGO', 'EXPRESS', 'SPRING', 'NEXT', 'NUXT',
-        'GOLANG', 'CLOJURE', 'HASKELL', 'ELIXIR', 'ERLANG', 'CUDA', 'WEBPACK',
-        'BABEL', 'GRAPHQL', 'REDIS', 'NGINX', 'APACHE', 'JQUERY', 'BOOTSTRAP',
-        'TAILWIND', 'SVELTE', 'EMBER', 'BACKBONE', 'LARAVEL', 'RAILS', 'FLASK',
-        'FASTAPI', 'DENO', 'BUN', 'VITE', 'PRISMA', 'SUPABASE', 'FIREBASE'
-    ],
-    animals: [
-        'ELEPHANT', 'GIRAFFE', 'PENGUIN', 'DOLPHIN', 'TIGER', 'LION', 'ZEBRA',
-        'KANGAROO', 'CHEETAH', 'GORILLA', 'PANDA', 'KOALA', 'JAGUAR', 'WOLF',
-        'OCTOPUS', 'RHINO', 'LEOPARD', 'EAGLE', 'SHARK', 'WHALE', 'BEAR',
-        'OSTRICH', 'RACCOON', 'TURTLE', 'CAMEL', 'SLOTH', 'LEMUR', 'HIPPO',
-        'CROCODILE', 'ALLIGATOR', 'FALCON', 'HAWK', 'PARROT', 'FLAMINGO',
-        'PELICAN', 'WALRUS', 'SEAL', 'OTTER', 'BEAVER', 'MOOSE', 'DEER',
-        'ANTELOPE', 'BUFFALO', 'BISON', 'PANTHER', 'COUGAR', 'LYNX', 'BOBCAT',
-        'HYENA', 'MEERKAT', 'WOMBAT', 'PLATYPUS', 'HEDGEHOG', 'PORCUPINE'
-    ],
-    countries: [
-        'FRANCE', 'JAPAN', 'BRAZIL', 'CANADA', 'INDIA', 'SPAIN', 'ITALY',
-        'GERMANY', 'EGYPT', 'MEXICO', 'CHINA', 'RUSSIA', 'KENYA', 'PERU',
-        'GREECE', 'KOREA', 'TURKEY', 'SWEDEN', 'NORWAY', 'THAILAND', 'CHILE',
-        'VIETNAM', 'MOROCCO', 'IRELAND', 'POLAND', 'AUSTRIA', 'BELGIUM',
-        'PORTUGAL', 'DENMARK', 'FINLAND', 'ICELAND', 'UKRAINE', 'ROMANIA',
-        'HUNGARY', 'SERBIA', 'CROATIA', 'COLOMBIA', 'ARGENTINA', 'VENEZUELA',
-        'ECUADOR', 'BOLIVIA', 'PARAGUAY', 'URUGUAY', 'PANAMA', 'CUBA',
-        'JAMAICA', 'MALAYSIA', 'INDONESIA', 'PHILIPPINES', 'PAKISTAN', 'NEPAL'
-    ],
-    fruits: [
-        'APPLE', 'BANANA', 'ORANGE', 'MANGO', 'GRAPE', 'KIWI', 'LEMON',
-        'CHERRY', 'PEACH', 'PLUM', 'PEAR', 'MELON', 'COCONUT', 'PAPAYA',
-        'APRICOT', 'GUAVA', 'LIME', 'LYCHEE', 'PASSION', 'FIG', 'DATES',
-        'AVOCADO', 'POMEGRANATE', 'RASPBERRY', 'BLUEBERRY', 'STRAWBERRY',
-        'BLACKBERRY', 'CRANBERRY', 'GRAPEFRUIT', 'TANGERINE', 'MANDARIN',
-        'NECTARINE', 'PERSIMMON', 'DRAGONFRUIT', 'STARFRUIT', 'JACKFRUIT',
-        'DURIAN', 'RAMBUTAN', 'MANGOSTEEN', 'CANTALOUPE', 'HONEYDEW', 'OLIVE'
-    ],
-    sports: [
-        'FOOTBALL', 'BASEBALL', 'TENNIS', 'CRICKET', 'HOCKEY', 'RUGBY',
-        'VOLLEYBALL', 'BOXING', 'SWIMMING', 'CYCLING', 'GOLF', 'SKIING',
-        'SURFING', 'KARATE', 'ARCHERY', 'FENCING', 'ROWING', 'DIVING',
-        'CLIMBING', 'RUNNING', 'SKATING', 'POLO', 'SAILING', 'BASKETBALL',
-        'BADMINTON', 'SQUASH', 'LACROSSE', 'WRESTLING', 'JUDO', 'TAEKWONDO',
-        'GYMNASTICS', 'TRIATHLON', 'MARATHON', 'SPRINTING', 'JAVELIN',
-        'DISCUS', 'SHOTPUT', 'HURDLES', 'BIATHLON', 'BOBSLED', 'CURLING',
-        'SNOWBOARD', 'KAYAKING', 'CANOEING', 'RAFTING', 'PARAGLIDING'
-    ],
-    colors: [
-        'RED', 'BLUE', 'GREEN', 'YELLOW', 'PURPLE', 'ORANGE', 'PINK', 'BROWN',
-        'BLACK', 'WHITE', 'GREY', 'CYAN', 'MAGENTA', 'VIOLET', 'INDIGO',
-        'TURQUOISE', 'MAROON', 'GOLD', 'SILVER', 'BEIGE', 'CORAL', 'CRIMSON',
-        'SCARLET', 'BURGUNDY', 'NAVY', 'TEAL', 'AQUA', 'LIME', 'OLIVE',
-        'KHAKI', 'TAN', 'IVORY', 'CREAM', 'SALMON', 'PEACH', 'LAVENDER',
-        'LILAC', 'PLUM', 'ORCHID', 'FUCHSIA', 'BRONZE', 'COPPER', 'AMBER'
-    ],
-    vegetables: [
-        'CARROT', 'BROCCOLI', 'SPINACH', 'CAULIFLOWER', 'POTATO', 'TOMATO',
-        'CUCUMBER', 'PEPPER', 'ONION', 'GARLIC', 'BEETROOT', 'CABBAGE',
-        'RADISH', 'ZUCCHINI', 'LETTUCE', 'CELERY', 'EGGPLANT', 'MUSHROOM',
-        'PEA', 'CORN', 'PUMPKIN', 'TURNIP', 'SQUASH', 'ASPARAGUS', 'ARTICHOKE',
-        'KALE', 'ARUGULA', 'CHARD', 'COLLARD', 'LEEK', 'SHALLOT', 'SCALLION',
-        'FENNEL', 'OKRA', 'PARSNIP', 'RUTABAGA', 'WATERCRESS', 'ENDIVE',
-        'RADICCHIO', 'KOHLRABI', 'BAMBOO', 'SPROUTS', 'EDAMAME', 'CHICKPEA'
-    ],
-    cars: [
-        'TESLA', 'TOYOTA', 'BMW', 'MERCEDES', 'FORD', 'AUDI', 'VOLKSWAGEN',
-        'HONDA', 'CHEVROLET', 'NISSAN', 'FERRARI', 'LAMBORGHINI', 'JAGUAR',
-        'PORSCHE', 'LEXUS', 'MASERATI', 'BUGATTI', 'MCLAREN', 'SUBARU',
-        'HYUNDAI', 'KIA', 'MAZDA', 'JEEP', 'VOLVO', 'CADILLAC', 'LINCOLN',
-        'BENTLEY', 'ROLLSROYCE', 'ASTON', 'LOTUS', 'ALFA', 'FIAT', 'PEUGEOT',
-        'RENAULT', 'CITROEN', 'SKODA', 'SEAT', 'SAAB', 'INFINITI', 'ACURA',
-        'GENESIS', 'LUCID', 'RIVIAN', 'RIMAC', 'KOENIGSEGG', 'PAGANI'
-    ],
-    professions: [
-        'DOCTOR', 'ENGINEER', 'TEACHER', 'LAWYER', 'SCIENTIST', 'ARTIST',
-        'CHEF', 'NURSE', 'ARCHITECT', 'MECHANIC', 'FARMER', 'PLUMBER',
-        'DANCER', 'WRITER', 'POLICE', 'FIREFIGHTER', 'DESIGNER', 'JOURNALIST',
-        'PHOTOGRAPHER', 'ACCOUNTANT', 'PILOT', 'MUSICIAN', 'SURGEON', 'DENTIST',
-        'PHARMACIST', 'THERAPIST', 'VETERINARIAN', 'ELECTRICIAN', 'CARPENTER',
-        'PAINTER', 'SCULPTOR', 'ACTOR', 'DIRECTOR', 'PRODUCER', 'EDITOR',
-        'TRANSLATOR', 'LIBRARIAN', 'CURATOR', 'ECONOMIST', 'ANALYST', 'BANKER',
-        'BROKER', 'CONSULTANT', 'MANAGER', 'DEVELOPER', 'ASTRONAUT', 'SAILOR'
-    ],
-    superheroes: [
-        'SUPERMAN', 'BATMAN', 'SPIDERMAN', 'THOR', 'HULK', 'FLASH', 'AQUAMAN',
-        'WOLVERINE', 'DEADPOOL', 'SHAZAM', 'CYBORG', 'DAREDEVIL', 'PUNISHER',
-        'BLADE', 'SPAWN', 'HELLBOY', 'ROGUE', 'STORM', 'CYCLOPS', 'GAMBIT',
-        'MAGNETO', 'MYSTIQUE', 'NIGHTCRAWLER', 'COLOSSUS', 'BEAST', 'PHOENIX',
-        'CABLE', 'BISHOP', 'JUBILEE', 'PSYLOCKE', 'ELEKTRA', 'CATWOMAN',
-        'BATGIRL', 'SUPERGIRL', 'HAWKGIRL', 'ZATANNA', 'STARFIRE', 'RAVEN'
-    ],
-    weather: [
-        'SUNNY', 'CLOUDY', 'RAINY', 'WINDY', 'STORMY', 'SNOWY', 'FOGGY',
-        'DRIZZLE', 'THUNDER', 'LIGHTNING', 'HAIL', 'HUMID', 'BREEZY', 'HEATWAVE',
-        'DROUGHT', 'TORNADO', 'HURRICANE', 'BLIZZARD', 'MISTY', 'GUSTY',
-        'OVERCAST', 'SLEET', 'FROST', 'FREEZING', 'TROPICAL', 'MONSOON',
-        'CYCLONE', 'TYPHOON', 'RAINBOW', 'SUNSHINE', 'TWILIGHT', 'DAWN',
-        'DUSK', 'BREEZE', 'GALE', 'SQUALL', 'TEMPEST', 'WHIRLWIND', 'DUSTY'
-    ],
-    instruments: [
-        'GUITAR', 'PIANO', 'VIOLIN', 'DRUMS', 'FLUTE', 'SAXOPHONE', 'TRUMPET',
-        'HARMONICA', 'TROMBONE', 'CELLO', 'BASS', 'CLARINET', 'HARP', 'BANJO',
-        'OBOE', 'TUBA', 'XYLOPHONE', 'UKULELE', 'MANDOLIN', 'ACCORDION',
-        'BAGPIPES', 'BONGOS', 'CASTANETS', 'CYMBALS', 'DIDGERIDOO', 'DULCIMER',
-        'GLOCKENSPIEL', 'MARACAS', 'MARIMBA', 'ORGAN', 'PICCOLO', 'RECORDER',
-        'SITAR', 'TAMBOURINE', 'TIMPANI', 'TRIANGLE', 'VIBRAPHONE', 'ZITHER'
-    ],
-    movies: [
-        'INCEPTION', 'TITANIC', 'AVATAR', 'GLADIATOR', 'MATRIX', 'INTERSTELLAR',
-        'JOKER', 'GODFATHER', 'FROZEN', 'BATMAN', 'SPIDERMAN', 'AVENGERS',
-        'JAWS', 'ALIEN', 'ALIENS', 'PREDATOR', 'TERMINATOR', 'ROBOCOP',
-        'SCARFACE', 'GOODFELLAS', 'CASINO', 'HEAT', 'DEPARTED', 'PRESTIGE',
-        'MEMENTO', 'DUNKIRK', 'TENET', 'OPPENHEIMER', 'GRAVITY', 'ARRIVAL',
-        'BLADE', 'LEON', 'AMELIE', 'OLDBOY', 'PARASITE', 'WHIPLASH', 'DRIVE',
-        'ZODIAC', 'SEVEN', 'FIGHT', 'SHUTTER', 'DJANGO', 'RESERVOIR', 'ROCKY'
-    ],
-    cities: [
-        'LONDON', 'PARIS', 'TOKYO', 'SYDNEY', 'DUBAI', 'BERLIN', 'MOSCOW',
-        'ROME', 'TORONTO', 'BARCELONA', 'BANGKOK', 'SINGAPORE', 'SEOUL',
-        'MUMBAI', 'SHANGHAI', 'CAIRO', 'ISTANBUL', 'AMSTERDAM', 'VIENNA',
-        'PRAGUE', 'BUDAPEST', 'ATHENS', 'LISBON', 'DUBLIN', 'MADRID',
-        'MILAN', 'VENICE', 'FLORENCE', 'NAPLES', 'MUNICH', 'HAMBURG',
-        'COLOGNE', 'ZURICH', 'GENEVA', 'BRUSSELS', 'STOCKHOLM', 'OSLO',
-        'HELSINKI', 'COPENHAGEN', 'WARSAW', 'KYOTO', 'OSAKA', 'BEIJING',
-        'VANCOUVER', 'MONTREAL', 'BOSTON', 'CHICAGO', 'SEATTLE', 'DENVER'
-    ],
-    bodyParts: [
-        'HAND', 'FOOT', 'HEAD', 'EYE', 'NOSE', 'MOUTH', 'EAR', 'ARM', 'LEG',
-        'KNEE', 'ELBOW', 'FINGER', 'TOE', 'HAIR', 'HEART', 'BRAIN', 'STOMACH',
-        'LUNG', 'LIVER', 'KIDNEY', 'SPINE', 'SKULL', 'JAW', 'CHIN', 'CHEEK',
-        'FOREHEAD', 'EYEBROW', 'EYELASH', 'TONGUE', 'TEETH', 'THROAT', 'NECK',
-        'SHOULDER', 'CHEST', 'RIB', 'HIP', 'THIGH', 'CALF', 'ANKLE', 'WRIST',
-        'PALM', 'THUMB', 'HEEL', 'SOLE', 'MUSCLE', 'BONE', 'SKIN', 'BLOOD'
-    ],
-    planets: [
-        'MERCURY', 'VENUS', 'EARTH', 'MARS', 'JUPITER', 'SATURN', 'URANUS',
-        'NEPTUNE', 'PLUTO', 'MOON', 'SUN', 'ASTEROID', 'COMET', 'METEOR',
-        'GALAXY', 'NEBULA', 'QUASAR', 'PULSAR', 'COSMOS', 'ORBIT', 'ECLIPSE',
-        'STELLAR', 'LUNAR', 'SOLAR', 'TITAN', 'EUROPA', 'GANYMEDE', 'CALLISTO',
-        'TRITON', 'CHARON', 'CERES', 'ERIS', 'HAUMEA', 'MAKEMAKE', 'SEDNA'
-    ]
+    programming: ['ぷろぐらむ', 'ぱそこん', 'でんし', 'がめん', 'きーぼーど', 'まうす', 'ねっと', 'でーた', 'あぷり', 'さーばー', 'こーど', 'ろぼっと'],
+    animals: ['いぬ', 'ねこ', 'うさぎ', 'きつね', 'たぬき', 'くま', 'ぱんだ', 'きりん', 'ぞう', 'らいおん', 'ぺんぎん', 'いるか', 'かえる', 'とら'],
+    countries: ['にほん', 'あめりか', 'かなだ', 'ぶらじる', 'いんど', 'ちゅうごく', 'ふらんす', 'いたりあ', 'どいつ', 'たい', 'えじぷと', 'けにあ'],
+    fruits: ['りんご', 'ばなな', 'みかん', 'ぶどう', 'いちご', 'もも', 'なし', 'すいか', 'めろん', 'れもん', 'きうい', 'さくらんぼ'],
+    sports: ['やきゅう', 'さっかー', 'すいえい', 'てにす', 'ばすけ', 'ばれー', 'らぐびー', 'じゅうどう', 'けんどう', 'たっきゅう', 'すもう', 'まらそん'],
+    colors: ['あか', 'あお', 'きいろ', 'みどり', 'むらさき', 'しろ', 'くろ', 'ちゃいろ', 'ももいろ', 'みずいろ', 'はいいろ', 'きんいろ'],
+    vegetables: ['にんじん', 'だいこん', 'きゅうり', 'とまと', 'なす', 'はくさい', 'れたす', 'たまねぎ', 'じゃがいも', 'かぼちゃ', 'ごぼう', 'ぴーまん'],
+    cars: ['じどうしゃ', 'ばす', 'たくしー', 'とらっく', 'ぱとかー', 'きゅうきゅうしゃ', 'しょうぼうしゃ', 'でんしゃ', 'ばいく', 'とらくたー'],
+    professions: ['いしゃ', 'せんせい', 'けいさつかん', 'かんごし', 'しょうぼうし', 'うんてんしゅ', 'りょうりにん', 'のうか', 'かしゅ', 'はいゆう', 'だいく', 'えきいん'],
+    superheroes: ['ひーろー', 'せいぎ', 'へんしん', 'まほう', 'ちから', 'ゆうしゃ', 'たんてい', 'にんじゃ', 'かめん', 'せんし'],
+    weather: ['はれ', 'あめ', 'くもり', 'ゆき', 'かぜ', 'たいふう', 'かみなり', 'にじ', 'きり', 'ひょう', 'つゆ', 'こさめ'],
+    instruments: ['ぴあの', 'ぎたー', 'どらむ', 'たいこ', 'ふえ', 'こと', 'しゃみせん', 'ばいおりん', 'らっぱ', 'はーぷ'],
+    movies: ['えいが', 'こめでぃ', 'どらま', 'あにめ', 'ほらー', 'ぼうけん', 'ものがたり', 'にんぎょう', 'さつえい', 'めいが'],
+    cities: ['とうきょう', 'おおさか', 'きょうと', 'なごや', 'さっぽろ', 'ふくおか', 'よこはま', 'なは', 'こうべ', 'ひろしま'],
+    bodyParts: ['あたま', 'かお', 'め', 'みみ', 'はな', 'くち', 'て', 'あし', 'むね', 'おなか', 'ゆび', 'ひざ'],
+    planets: ['わくせい', 'ちきゅう', 'かせい', 'もくせい', 'どせい', 'てんのうせい', 'かいおうせい', 'つき', 'たいよう', 'すいせい', 'ぎんが', 'うちゅう']
 };
-
 
 
 const gridsizes = [10, 20, 30, 40];
@@ -227,16 +99,17 @@ class WordSearchGame {
             if (this.words.length === this.wordsPerGame) break;
         }
         this.gameBoard = this.gameBoard.map(row => row.map(letter =>
-            letter || String.fromCharCode(65 + Math.floor(Math.random() * 26))));
+            letter || 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん'[Math.floor(Math.random() * 46)]));
         this.renderBoard();
         this.renderWordList();
         this.updateOptions();
         this.updateProgress();
-        this.announce(`New ${this.categoryLabel(this.currentCategory)} puzzle, ${this.gridSize} by ${this.gridSize}. Find ${this.words.length} words.`);
+        this.announce(`${this.categoryLabel(this.currentCategory)}の新しい問題です。盤面は${this.gridSize}×${this.gridSize}。${this.words.length}個の単語を探してください。`);
     }
 
     categoryLabel(category) {
-        return category === 'bodyParts' ? 'Body parts' : category[0].toUpperCase() + category.slice(1);
+        const labels = { programming: 'コンピューター', animals: '動物', countries: '国', fruits: '果物', sports: 'スポーツ', colors: '色', vegetables: '野菜', cars: '乗り物', professions: '職業', superheroes: 'ヒーロー', weather: '天気', instruments: '楽器', movies: '映画', cities: '街', bodyParts: '体の部位', planets: '宇宙' };
+        return labels[category] || category;
     }
 
     renderOptions() {
@@ -284,7 +157,7 @@ class WordSearchGame {
                 cell.dataset.row = row;
                 cell.dataset.col = col;
                 cell.setAttribute('role', 'gridcell');
-                cell.setAttribute('aria-label', `${letter}, row ${row + 1}, column ${col + 1}`);
+                cell.setAttribute('aria-label', `${letter}、${row + 1}行${col + 1}列`);
                 cell.setAttribute('aria-selected', 'false');
                 cell.tabIndex = row === 0 && col === 0 ? 0 : -1;
                 rowElement.appendChild(cell);
@@ -308,7 +181,7 @@ class WordSearchGame {
     }
 
     announce(message) { this.status.textContent = message; }
-    updateProgress() { this.progress.textContent = `${this.foundWords.size} of ${this.words.length} words found`; }
+    updateProgress() { this.progress.textContent = `${this.words.length}個中${this.foundWords.size}個見つかりました`; }
     cellAt(row, col) { return this.cells[row * this.gridSize + col]; }
     eventCell(event) { return event.target.closest('.cell'); }
 
@@ -432,10 +305,10 @@ class WordSearchGame {
             this.renderWordList();
             this.updateProgress();
             this.announce(this.foundWords.size === this.words.length
-                ? 'Puzzle complete! You found every word. Choose New puzzle to play again.'
-                : `${word} found. ${this.foundWords.size} of ${this.words.length} words found.`);
+                ? '完成です！すべての単語を見つけました。「新しい問題」を選ぶともう一度遊べます。'
+                : `「${word}」を見つけました。${this.words.length}個中${this.foundWords.size}個見つかりました。`);
         } else {
-            this.announce(word ? `${word} was already found.` : 'No matching word. Try another selection.');
+            this.announce(word ? `「${word}」はすでに見つけています。` : '一致する単語がありません。別の範囲を選んでください。');
         }
         this.cancelSelection();
     }

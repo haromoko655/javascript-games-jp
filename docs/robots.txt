@@ -1,10 +1,10 @@
-# Robots.txt for Brain Busters - games.muthu.co
+# Robots.txt for Brain Busters - haromoko655.github.io/javascript-games-jp
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://games.muthu.co/sitemap.xml
+Sitemap: https://haromoko655.github.io/javascript-games-jp/sitemap.xml
 
 # Crawl-delay for politeness
 Crawl-delay: 1

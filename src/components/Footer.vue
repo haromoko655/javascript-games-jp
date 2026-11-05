@@ -4,21 +4,13 @@
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-start">
           <p class="mb-2 mb-md-0">
-            &copy; {{ currentYear }} <a href="/about">Muthukrishnan</a>
+            &copy; {{ currentYear }} Muthukrishnan
           </p>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <nav aria-label="Footer navigation" class="footer-nav">
-            <router-link to="/">Games</router-link>
-            <router-link to="/about">About</router-link>
-            <a
-              href="https://github.com/muthuspark/javascript-games"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View source code on GitHub"
-            >
-              Source
-            </a>
+          <nav aria-label="フッターナビゲーション" class="footer-nav">
+            <router-link to="/">ゲーム一覧</router-link>
+            <RepositoryLinks menu-id="footer-repository-menu" />
           </nav>
         </div>
       </div>
@@ -27,6 +19,8 @@
 </template>
 
 <script setup>
+import RepositoryLinks from './RepositoryLinks.vue'
+
 const currentYear = new Date().getFullYear()
 </script>
 

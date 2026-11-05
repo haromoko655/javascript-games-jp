@@ -12,35 +12,35 @@
       </div>
     </header>
 
-    <section id="game_main_container" class="game-section" aria-label="Game Area">
+    <section id="game_main_container" class="game-section" aria-label="ゲームエリア">
       <div class="game-container">
         <div class="controls">
           <select id="difficultySelect" class="difficulty-select" onchange="changeDifficulty()">
-            <option value="easy">Easy</option>
-            <option value="medium" selected>Medium</option>
-            <option value="hard">Hard</option>
+            <option value="easy">初級</option>
+            <option value="medium" selected>中級</option>
+            <option value="hard">上級</option>
           </select>
-          <button onclick="newGame()">New Game</button>
+          <button onclick="newGame()">新しいゲーム</button>
         </div>
 
-        <div id="gameStatus" class="game-status">Your turn - Select a pile</div>
+        <div id="gameStatus" class="game-status">あなたの番です - 山を選んでください</div>
 
         <div id="message" class="message"></div>
 
         <div id="pilesContainer" class="piles-container"></div>
 
         <div class="take-section">
-          <h3>Take Objects</h3>
+          <h3>石を取る</h3>
           <div id="takeButtons"></div>
         </div>
 
         <div class="rules">
-          <h4>How to Play</h4>
+          <h4>遊び方</h4>
           <ul>
-            <li>Click a pile to select it</li>
-            <li>Choose how many objects to take (at least 1)</li>
-            <li>You can only take from one pile per turn</li>
-            <li>The player who takes the last object loses!</li>
+            <li>山をクリックして選びます</li>
+            <li>取る石の数を選びます（1個以上）</li>
+            <li>1回の手番で取れるのは1つの山からだけです</li>
+            <li>最後の石を取った人が負けです！</li>
           </ul>
         </div>
       </div>
@@ -49,8 +49,8 @@
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -69,33 +69,33 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'nim',
-  title: 'Nim Game - Strategic Object Removal',
+  title: 'ニム - 戦略ゲーム',
   shortTitle: 'Nim',
-  description: 'Play Nim against AI. Take objects from piles strategically - whoever takes the last object loses. A classic mathematical strategy game.',
+  description: 'コンピューターとニムで対戦しましょう。山から交互に取り、最後の一つを取った人が負ける数学的な戦略ゲームです。',
   metaDescription: 'Play Nim online free against AI. Remove objects from piles strategically. Whoever takes the last object loses. Multiple difficulty levels available.',
   thumbnail: 'thumbnail.png',
-  categories: ['Strategy Games', 'Logic Games', 'Classic Games'],
+  categories: ['戦略', '論理', '定番'],
   keywords: ['nim game', 'strategy game', 'mathematical game', 'logic puzzle', 'two player game', 'brain game', 'nim sum'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'What is Nim and how do you play?',
-      answer: 'Nim is a mathematical strategy game. The game starts with several piles of objects. On your turn, you must take at least one object from exactly one pile. You can take as many objects as you want from that pile. The player who takes the last object loses the game.'
+      question: "ニムとはどんなゲームですか？",
+      answer: "複数の山から石を取る数学的な戦略ゲームです。自分の番では、1つの山から1個以上の石を取ります。最後の石を取った人が負けです。"
     },
     {
-      question: 'What is the winning strategy in Nim?',
-      answer: 'The winning strategy involves calculating the "Nim sum" - the XOR of all pile sizes. If the Nim sum is non-zero, you can always make a move to make it zero, putting your opponent in a losing position. The AI on hard difficulty uses this optimal strategy.'
+      question: "ニムの必勝法はありますか？",
+      answer: "各山の石の数をXOR演算した「ニム和」を計算します。ニム和が0でなければ、次の手で0にできる場合があります。上級のコンピューターはこの戦略を使います。"
     },
     {
-      question: 'What are the different difficulty levels?',
-      answer: 'Easy: AI makes random moves. Medium: AI plays optimally 50% of the time. Hard: AI always plays the optimal strategy using Nim sum calculations. Try to beat the AI on hard difficulty!'
+      question: "難易度の違いは何ですか？",
+      answer: "初級はランダムに石を取ります。中級は半分の確率で最善手を選びます。上級はニム和を使って常に最善手を選びます。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

@@ -43,14 +43,14 @@
             render();
             if (currentPlayer === 1) {
                 GamePopup.show({
-                    title: 'Congratulations!',
-                    message: 'You connected top to bottom! You win!',
+                    title: 'クリアおめでとう！',
+                    message: '上辺と下辺をつなぎました！あなたの勝ちです！',
                     showConfetti: true
                 });
             } else {
                 GamePopup.show({
-                    title: 'Better luck next time!',
-                    message: 'AI connected left to right. AI wins!'
+                    title: '次はがんばりましょう！',
+                    message: 'コンピューターが左右をつなぎました。相手の勝ちです！'
                 });
             }
             return;
@@ -81,8 +81,8 @@
                 gameOver = true;
                 render();
                 GamePopup.show({
-                    title: 'Better luck next time!',
-                    message: 'AI connected left to right. AI wins!'
+                    title: '次はがんばりましょう！',
+                    message: 'コンピューターが左右をつなぎました。相手の勝ちです！'
                 });
                 isAiTurn = false;
                 return;
@@ -315,11 +315,11 @@
     function updateStatus() {
         const statusEl = document.getElementById('gameStatus');
         if (gameOver) {
-            statusEl.textContent = 'Game Over';
+            statusEl.textContent = 'ゲームオーバー';
         } else if (isAiTurn) {
-            statusEl.textContent = 'AI is thinking...';
+            statusEl.textContent = 'コンピューターが考えています…';
         } else {
-            statusEl.textContent = 'Your turn - Click a cell to place your piece';
+            statusEl.textContent = 'あなたの番です - マスをクリックしてコマを置いてください';
         }
     }
 

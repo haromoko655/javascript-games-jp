@@ -12,7 +12,7 @@
       </div>
     </header>
 
-    <section class="game-section" aria-label="Game Area">
+    <section class="game-section" aria-label="ゲームエリア">
       <div class="game-container">
         <svg class="hangman-svg" viewBox="0 0 200 250">
           <!-- Gallows -->
@@ -29,30 +29,30 @@
           <line id="rightLeg" x1="140" y1="150" x2="170" y2="190"></line>
         </svg>
 
-        <div class="hint" id="hint">Category: </div>
+        <div class="hint" id="hint">カテゴリ： </div>
         <div id="wordDisplay" class="word-display"></div>
         <div id="message" class="message"></div>
         <div id="keyboard"></div>
 
         <div class="stats">
-          <div>Wrong: <span id="wrongCount">0</span>/6</div>
-          <div>Wins: <span id="wins">0</span></div>
-          <div>Losses: <span id="losses">0</span></div>
+          <div>不正解： <span id="wrongCount">0</span>/6</div>
+          <div>勝利： <span id="wins">0</span></div>
+          <div>敗北： <span id="losses">0</span></div>
         </div>
 
         <div class="controls">
-          <button onclick="newGame()">New Game</button>
+          <button onclick="newGame()">新しいゲーム</button>
         </div>
 
-        <div class="info">Tip: You can also use your keyboard to guess letters!</div>
+        <div class="info">ヒント：キーボードから文字を入力して答えることもできます！</div>
       </div>
     </section>
 
     <GameFaqs :faqs="game.faqs" />
     <RelatedGames :currentSlug="game.slug" :categories="game.categories" />
 
-    <meta itemprop="url" :content="`https://games.muthu.co/posts/${game.slug}/`">
-    <meta itemprop="image" :content="`https://games.muthu.co/posts/${game.slug}/thumbnail.png`">
+    <meta itemprop="url" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/`">
+    <meta itemprop="image" :content="`https://haromoko655.github.io/javascript-games-jp/posts/${game.slug}/thumbnail.png`">
     <meta itemprop="applicationCategory" content="Game">
     <meta itemprop="operatingSystem" content="Web Browser">
     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
@@ -71,33 +71,33 @@ import RelatedGames from '../../components/RelatedGames.vue'
 
 const game = {
   slug: 'hangman',
-  title: 'Hangman Game - Word Guessing Puzzle',
-  shortTitle: 'Hangman',
-  description: 'Guess the hidden word one letter at a time. Classic word guessing game with multiple categories including animals, countries, foods, and more.',
+  title: 'ハングマン - 単語当てゲーム',
+  shortTitle: 'ハングマン',
+  description: '隠された単語を一文字ずつ当てましょう。動物、国、食べ物など複数のカテゴリがあります。',
   metaDescription: 'Play Hangman online free. Guess the hidden word letter by letter before the hangman is complete. Multiple word categories for endless fun.',
   thumbnail: 'thumbnail.png',
-  categories: ['Word Games', 'Classic Games', 'Educational'],
+  categories: ['言葉', '定番', '学習'],
   keywords: ['hangman', 'word game', 'guessing game', 'word puzzle', 'vocabulary game', 'spelling game'],
   initCode: 'newGame();',
   faqs: [
     {
-      question: 'How do you play Hangman?',
-      answer: 'Try to guess the hidden word by selecting letters. Each correct letter reveals its position in the word. Each wrong guess adds a body part to the hangman. Guess the word before the hangman is complete to win!'
+      question: "ハングマンはどう遊びますか？",
+      answer: "隠された単語を一文字ずつ当てます。正解すると文字の位置が表示され、間違えると絞首人の絵が進みます。絵が完成する前に単語を当てましょう。"
     },
     {
-      question: 'How many wrong guesses do I get?',
-      answer: 'You get 6 wrong guesses before the game is over. The hangman figure builds up with each wrong guess: head, body, left arm, right arm, left leg, and right leg.'
+      question: "間違いは何回までできますか？",
+      answer: "間違いは6回までです。頭、胴体、左右の腕、左右の脚の順に絵が描かれます。"
     },
     {
-      question: 'What word categories are available?',
-      answer: 'Words are randomly selected from five categories: Animals, Countries, Foods, Sports, and Science. The category is shown as a hint to help you guess.'
+      question: "どんなカテゴリがありますか？",
+      answer: "動物、国、食べ物、スポーツ、科学の5カテゴリです。カテゴリはヒントとして表示されます。"
     }
   ]
 }
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Games', path: '/' },
+  { name: 'ホーム', path: '/' },
+  { name: 'ゲーム一覧', path: '/' },
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 

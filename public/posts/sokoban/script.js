@@ -10,9 +10,9 @@
 
   // Level definitions: W=wall, .=floor, P=player, B=box, T=target, O=box on target, @=player on target
   const levels = [
-    // Level 1 - Tutorial
+    // レベル1 - チュートリアル
     {
-      name: 'Tutorial',
+      name: 'チュートリアル',
       map: [
         'WWWWWW',
         'W....W',
@@ -24,7 +24,7 @@
     },
     // Level 2 - Simple push
     {
-      name: 'First Steps',
+      name: 'はじめの一歩',
       map: [
         'WWWWWWW',
         'W.....W',
@@ -36,7 +36,7 @@
     },
     // Level 3 - Corner work
     {
-      name: 'Corner Push',
+      name: '角への押し込み',
       map: [
         'WWWWWWWW',
         'W......W',
@@ -49,7 +49,7 @@
     },
     // Level 4 - Narrow paths
     {
-      name: 'Narrow Path',
+      name: '細い通路',
       map: [
         'WWWWWWWW',
         'WT....TW',
@@ -61,7 +61,7 @@
     },
     // Level 5 - Box arrangement
     {
-      name: 'Triple Boxes',
+      name: '3つの箱',
       map: [
         'WWWWWWWWW',
         'W.......W',
@@ -74,7 +74,7 @@
     },
     // Level 6 - L-shaped
     {
-      name: 'L-Shape',
+      name: 'L字型',
       map: [
         'WWWWWWWW',
         'W......W',
@@ -86,7 +86,7 @@
     },
     // Level 7 - Planning ahead
     {
-      name: 'Think Ahead',
+      name: '先を読もう',
       map: [
         'WWWWWWWWW',
         'W...W...W',
@@ -98,7 +98,7 @@
     },
     // Level 8 - Tight space
     {
-      name: 'Tight Squeeze',
+      name: '狭い場所',
       map: [
         'WWWWWWWW',
         'WTT....W',
@@ -110,7 +110,7 @@
     },
     // Level 9 - Diamond
     {
-      name: 'Diamond',
+      name: 'ダイヤ',
       map: [
         'WWWWWWWWW',
         'W...T...W',
@@ -123,7 +123,7 @@
     },
     // Level 10 - Challenge
     {
-      name: 'The Challenge',
+      name: '挑戦',
       map: [
         'WWWWWWWWWW',
         'W........W',
@@ -288,14 +288,14 @@
       setTimeout(() => {
         const isLastLevel = currentLevel === levels.length - 1;
         GamePopup.show({
-          title: 'Level Complete!',
-          message: `You solved "${levels[currentLevel].name}" in ${moves} moves and ${pushes} pushes!`,
+          title: 'ステージクリア！',
+          message: `「${levels[currentLevel].name}」を${moves}手、${pushes}回押してクリアしました！`,
           showConfetti: true,
           buttons: isLastLevel ? [
-            { text: 'Play Again', onClick: () => { currentLevel = 0; loadLevel(currentLevel); GamePopup.hide(); } }
+            { text: 'もう一度遊ぶ', onClick: () => { currentLevel = 0; loadLevel(currentLevel); GamePopup.hide(); } }
           ] : [
-            { text: 'Next Level', onClick: () => { currentLevel++; loadLevel(currentLevel); GamePopup.hide(); } },
-            { text: 'Replay', onClick: () => { loadLevel(currentLevel); GamePopup.hide(); } }
+            { text: '次のステージ', onClick: () => { currentLevel++; loadLevel(currentLevel); GamePopup.hide(); } },
+            { text: 'もう一度プレイ', onClick: () => { loadLevel(currentLevel); GamePopup.hide(); } }
           ]
         });
       }, 200);
@@ -427,7 +427,7 @@
 
     if (movesEl) movesEl.textContent = moves;
     if (pushesEl) pushesEl.textContent = pushes;
-    if (levelNameEl) levelNameEl.textContent = `Level ${currentLevel + 1}: ${levels[currentLevel].name}`;
+    if (levelNameEl) levelNameEl.textContent = `レベル${currentLevel + 1}：${levels[currentLevel].name}`;
   }
 
   function updateLevelSelect() {
@@ -520,7 +520,7 @@
     levels.forEach((level, index) => {
       const option = document.createElement('option');
       option.value = index;
-      option.textContent = `Level ${index + 1}: ${level.name}`;
+      option.textContent = `レベル${index + 1}：${level.name}`;
       select.appendChild(option);
     });
   }

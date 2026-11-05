@@ -92,7 +92,7 @@ function checkWin() {
         bestScores[currentLevel] = moves;
         updateBestScore();
     }
-    showMessage(`You won in ${moves} moves!`);
+    showMessage(`${moves}手でクリアしました！`);
 }
 
 function shuffleGrid() {
@@ -145,7 +145,7 @@ function updateMoves() {
 
 function updateBestScore() {
     const best = bestScores[currentLevel];
-    document.getElementById('bestScore').textContent = best ? best + ' moves' : '-';
+    document.getElementById('bestScore').textContent = best ? best + '手' : '-';
 }
 
 function showMessage(text) {
