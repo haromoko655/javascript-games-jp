@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column min-vh-100">
+  <div id="top" class="d-flex flex-column min-vh-100">
     <a href="#main-content" class="visually-hidden-focusable skip-link">
       Skip to main content
     </a>

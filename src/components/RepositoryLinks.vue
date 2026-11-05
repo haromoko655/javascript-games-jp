@@ -12,7 +12,14 @@
       <i class="bi bi-github" aria-hidden="true"></i>
       <span>GitHub</span>
     </button>
-    <div v-show="menuOpen" :id="menuId" class="repository-menu" role="menu" @keydown.esc="menuOpen = false">
+    <div
+      v-show="menuOpen"
+      :id="menuId"
+      class="repository-menu"
+      :class="{ 'repository-menu-up': placement === 'up' }"
+      role="menu"
+      @keydown.esc="menuOpen = false"
+    >
       <a
         href="https://github.com/muthuspark/javascript-games"
         target="_blank"
@@ -42,6 +49,11 @@ defineProps({
   menuId: {
     type: String,
     required: true
+  },
+  placement: {
+    type: String,
+    default: 'down',
+    validator: value => ['up', 'down'].includes(value)
   }
 })
 
@@ -88,6 +100,11 @@ const menuOpen = ref(false)
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+}
+
+.repository-menu-up {
+  top: auto;
+  bottom: 100%;
 }
 
 .repository-menu a {

@@ -6,7 +6,12 @@ export const createApp = ViteSSG(
   App,
   {
     routes,
-    base: import.meta.env.BASE_URL
+    base: import.meta.env.BASE_URL,
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) return savedPosition
+      if (to.hash) return { el: to.hash }
+      return { top: 0 }
+    }
   },
   ({ router, isClient }) => {
     // Track page views on route change

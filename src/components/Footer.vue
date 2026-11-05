@@ -9,8 +9,8 @@
         </div>
         <div class="col-md-6 text-center text-md-end">
           <nav aria-label="フッターナビゲーション" class="footer-nav">
-            <router-link to="/">ゲーム一覧</router-link>
-            <RepositoryLinks menu-id="footer-repository-menu" />
+            <router-link to="/#top">ゲーム一覧</router-link>
+            <RepositoryLinks menu-id="footer-repository-menu" placement="up" />
           </nav>
         </div>
       </div>

@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item">
-            <router-link class="nav-link" to="/" aria-label="すべてのゲームを見る">
+            <router-link class="nav-link" to="/#top" aria-label="すべてのゲームを見る">
               <i class="bi bi-controller me-1" aria-hidden="true"></i> ゲーム一覧
             </router-link>
           </li>
