@@ -94,7 +94,7 @@ const faqs = [
 
 // SEO Head configuration
 useHead({
-  title: 'Brain Busters 日本語版 - 無料のオンライン脳トレ・パズルゲーム',
+  title: 'Webブラウザゲーム - ブレインバスターズ 日本語版 | 無料の脳トレ・パズルゲーム',
   meta: [
     { name: 'description', content: siteData.description },
     { name: 'keywords', content: 'puzzle games, brain games, sudoku, minesweeper, tic tac toe, connect 4, word search, logic games, free online games' },

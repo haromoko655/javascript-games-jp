@@ -221,7 +221,7 @@ export const games = [
 
 // Site-wide SEO data
 export const siteData = {
-  siteName: 'Brain Busters 日本語版',
+  siteName: 'Webブラウザゲーム - ブレインバスターズ 日本語版',
   tagline: '無料オンライン脳トレゲーム',
   siteUrl: 'https://haromoko655.github.io/javascript-games-jp',
   description: '数独、マインスイーパー、○×ゲームなど、無料のオンラインパズルを遊びましょう。論理や戦略を使うゲームを集めました。',

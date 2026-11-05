@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg" aria-label="メインナビゲーション">
     <div class="container">
-      <router-link class="navbar-brand d-flex align-items-center" to="/" aria-label="ブレインバスターズ - ホーム">
-        <span class="brand-text">ブレインバスターズ 日本語版</span>
+      <router-link class="navbar-brand d-flex align-items-center" to="/" aria-label="Webブラウザゲーム - ブレインバスターズ 日本語版">
+        <span class="brand-text">Webブラウザゲーム - ブレインバスターズ 日本語版</span>
       </router-link>
       <button
         class="navbar-toggler"
