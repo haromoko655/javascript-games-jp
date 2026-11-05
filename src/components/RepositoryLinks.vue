@@ -83,7 +83,7 @@ const menuOpen = ref(false)
 .repository-trigger:hover,
 .repository-trigger:focus-visible {
   color: var(--color-text-strong);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .repository-trigger i {
@@ -117,6 +117,6 @@ const menuOpen = ref(false)
 .repository-menu a:hover,
 .repository-menu a:focus-visible {
   background: var(--color-surface-subtle);
-  text-decoration: underline;
+  text-decoration: none;
 }
 </style>

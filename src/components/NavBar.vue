@@ -66,7 +66,7 @@ import RepositoryLinks from './RepositoryLinks.vue'
 }
 
 .nav-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--color-text-strong) !important;
 }
 
@@ -75,7 +75,7 @@ import RepositoryLinks from './RepositoryLinks.vue'
 }
 
 .router-link-active:not(.navbar-brand) {
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--color-text-strong) !important;
 }
 

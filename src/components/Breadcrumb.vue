@@ -44,7 +44,7 @@ defineProps({
 }
 
 .breadcrumb-item a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .breadcrumb-item.active {
